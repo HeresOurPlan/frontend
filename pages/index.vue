@@ -13,20 +13,7 @@
     <body style="background-color:#FCF6E7;">
     <h4 align='center'><strong>Welcome!</strong></h4>
     <form action="" method="post">
-    <style> 
-      input[type=button]{
-      background-color: #A7C957;
-      border: none;
-      color: white;
-      padding: 5px 100px;
-      text-decoration: none;
-      margin: 2px 1px;
-      cursor: pointer;
-      align: center;
-      border-radius: 15px;
-      font-style: italic;
-    }
-    </style>
+
     <div class="buttonHolder">
       <router-link to ="/loginpage">
       <input type='button' style="color: #386641; font-weight: bold;" value = "Log In">
@@ -38,30 +25,39 @@
     <div class="buttonHolder">
       <input type='submit' style="color: #BC4749; font-weight: bold;" value = "Register">
     </div>
-    <style> 
-      input[type=submit]{
-      background-color: #F2E8CF;
-      border: none;
-      color: white;
-      padding: 5px 100px;
-      text-decoration: none;
-      margin: 2px 1px;
-      cursor: pointer;
-      align: center;
-      border-radius: 15px;
-      font-style: italic;
-    }
-    </style>
-
-    <style>
-    .buttonHolder{ text-align: center; }
-    </style>
 
     </form>
     </body>
   </html>
   
 </template>
+
+<style>
+  input[type=button]{
+  background-color: #A7C957;
+  border: none;
+  color: white;
+  padding: 5px 100px;
+  text-decoration: none;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-style: italic;
+}
+  input[type=submit]{
+  background-color: #F2E8CF;
+  border: none;
+  color: white;
+  padding: 5px 100px;
+  text-decoration: none;
+  margin: 2px 1px;
+  cursor: pointer;
+  border-radius: 15px;
+  font-style: italic;
+}
+  .buttonHolder{ text-align: center; }
+
+</style>
 
 <script>
 
