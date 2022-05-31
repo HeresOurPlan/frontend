@@ -32,6 +32,15 @@
   </html>
   
 </template>
+
+
+<script>
+export default {
+  name: 'LoginPage',
+}
+</script>
+
+
 <style> 
     input[type=button] {
     background-color: #A7C957;
@@ -48,8 +57,3 @@
     .loginDetails{ text-align: center; }
     .buttonHolder{ text-align: center; }
 </style>
-<script>
-export default {
-  name: 'IndexPage',
-}
-</script>
