@@ -1,5 +1,5 @@
 <template>
-  <html>
+    <div>
     <h1 style="color:#BC4749; font-family:merriweather; font-size: 70px; padding-left: 50px;">
       <strong>
       <i>
@@ -9,8 +9,8 @@
       </i>
       </strong>
     </h1>
+ 
     
-    <body style="background-color:#FCF6E7;">
     <h4 align='center'><strong>Welcome!</strong></h4>
     <form action="" method="post">
 
@@ -27,8 +27,7 @@
     </div>
 
     </form>
-    </body>
-  </html>
+    </div>
   
 </template>
 
@@ -41,6 +40,9 @@ export default {
 
 
 <style>
+  body{
+    background-color: #FCF6E7;
+  }
   input[type=button]{
   background-color: #A7C957;
   border: none;
