@@ -23,7 +23,9 @@
   
     <h6 align='center'>New User?</h6>
     <div class="buttonHolder">
+      <router-link to ="/registrationpage">
       <input type='submit' style="color: #BC4749; font-weight: bold;" value = "Register">
+      </router-link>
     </div>
 
     </form>

@@ -11,30 +11,32 @@
     </h1>
   
     <div class="loginDetails">
+        <input type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 25%;
+        color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+        <br/><br/>
         <input type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
-        <input type="text" placeholder="Password" style = "background-color: #F2E8CF; width: 25%;
+        <input type="password" placeholder="Password" style = "background-color: #F2E8CF; width: 25%;
+        color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+        <br/><br/>
+        <input type="password" placeholder="Re-type Password" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
     </div>
 
     <div class="buttonHolder">
-      <input type='button' style="color: #386641; font-weight: bold;" value = "Log In">
+      <input type='button' value = "Sign up" style="color: black; font-weight: bold;">
     </div>
     <br>
-
-    <router-link to ="">
-        <p align='center' style="color: black;"><i><u>Forgot your password?</u></i></p>
-    </router-link>
-  </div>
+    </div>
   
 </template>
 
 
 <script>
 export default {
-  name: 'LoginPage',
+  name: 'RegistrationPage',
 }
 </script>
 
@@ -55,6 +57,11 @@ export default {
   font-style: italic;
   text-align: center; 
   }
-  .loginDetails{ text-align: center; }
-  .buttonHolder{ text-align: center; }
+  .loginDetails{
+      text-align: center;
+    }
+  .buttonHolder{
+      color: #386641;
+      text-align: center;
+    }
 </style>
