@@ -14,11 +14,17 @@
     <div class="profileCircle"> 
     </div>
 
-    <div class="centerImage">
-    </div>
     <div class="leftImage">
     </div>
+    <div class="centerImage">
+    </div>
+    <div class="rightImage">
+    </div>
     
+    <div>
+    <i class="fa-solid fa-location-dot"></i>    
+    </div>
+
     </div>
 </template>
 
@@ -71,6 +77,17 @@ export default {
         text-align: left;
     }
     .centerImage {
+        width:100px;
+        height:100px;
+        background-image: url(https://images.unsplash.com/photo-1532876688342-a79b7fa5c473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80);
+        background-size:cover;
+        background-position:center;
+        padding-left: 100px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .rightImage{
         width:100px;
         height:100px;
         background-image: url(https://images.unsplash.com/photo-1532876688342-a79b7fa5c473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80);

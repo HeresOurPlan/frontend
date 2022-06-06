@@ -14,19 +14,18 @@
         <input type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
-        <input type="text" placeholder="Password" style = "background-color: #F2E8CF; width: 25%;
+        <input type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
     </div>
 
     <div class="buttonHolder">
-      <input type='button' style="color: #386641; font-weight: bold;" value = "Log In">
+        <router-link to="loginpage">
+        <input type='button' style="color: #386641; font-weight: bold;" value = "Request New Password">
+        </router-link>
     </div>
     <br>
 
-    <router-link to ="/forgotpassword">
-        <p align='center' style="color: black;"><i><u>Forgot your password?</u></i></p>
-    </router-link>
   </div>
   
 </template>
