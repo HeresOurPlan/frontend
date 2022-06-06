@@ -1,18 +1,18 @@
 <template>
     <div>
     <Navbar />
-    <h1 style="color: #BC4749; font-family: merriweather; font-size: 45px; 
-    padding-top: 50px; padding-left: 200px;">
+    <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px; 
+    padding-top: 20px; padding-left: 175px; ">
       <strong>
       <i>
         Last Viewed Activities
       </i>
       </strong>
     </h1>
-    <div class="circle">
+    <!-- <div class="circle">
         </div>
     <div class="profileCircle"> 
-        </div>
+        </div> -->
 
     <b-container>
         <div class="row-fluid scrollable" style="height:250px">
@@ -21,13 +21,6 @@
             </div>
         </div>
     </b-container>
-
-    <!-- <div class="leftImage">
-        <div class="centerImage">
-            <div class="rightImage">
-            </div>
-        </div>  
-    </div> -->
     
     <br/><br/><br/><br/>
 
