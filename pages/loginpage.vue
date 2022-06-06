@@ -20,7 +20,9 @@
     </div>
 
     <div class="buttonHolder">
+      <router-link to="/mainpage">
       <input type='button' style="color: #386641; font-weight: bold;" value = "Log In">
+      </router-link>
     </div>
     <br>
 
