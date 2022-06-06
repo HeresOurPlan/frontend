@@ -59,7 +59,7 @@ export default {
         ]
         }
     },
-    components: [ Navbar ]
+    components: { Navbar }
 }
 </script>
 
