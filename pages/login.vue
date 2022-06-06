@@ -14,7 +14,7 @@
           <input v-model="username" type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
           color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
           <br/><br/>
-          <input v-model="password" type="text" placeholder="Password" style = "background-color: #F2E8CF; width: 25%;
+          <input v-model="password" type="password" placeholder="Password" style = "background-color: #F2E8CF; width: 25%;
           color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
           <br/><br/>
       </div>
@@ -63,7 +63,7 @@ export default {
         this.alertShown = true
         this.alertMsg = "Login successful"
         this.alertVariant = "success"
-        window.location.href = "/mainpage"
+        window.location.href = "/main"
       } else {
         this.alertShown = true
         this.alertMsg = "Login failed"

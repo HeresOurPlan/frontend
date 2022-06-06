@@ -15,7 +15,7 @@
     <form action="" method="post">
 
     <div class="buttonHolder">
-      <router-link to ="/loginpage">
+      <router-link to ="/login">
       <input type='button' style="color: #386641; font-weight: bold;" value = "Log In">
     </router-link>
     </div>
