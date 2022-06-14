@@ -9,10 +9,6 @@
       </i>
       </strong>
     </h1>
-    <!-- <div class="circle">
-        </div>
-    <div class="profileCircle"> 
-        </div> -->
 
     <b-container>
         <div class="row-fluid scrollable" style="height:250px">
