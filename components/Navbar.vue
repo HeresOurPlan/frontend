@@ -1,7 +1,7 @@
 <template>
     <b-navbar toggleable="lg" type="dark" variant="dark">
       
-    <b-navbar-brand href="#">NavBar</b-navbar-brand>
+    <b-navbar-brand href="#">Here's Our Plan</b-navbar-brand>
 
     <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -17,7 +17,7 @@
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Where to?">
+        <b-nav-item-dropdown text="Where to?" class="ml-2">
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
           <b-dropdown-item href="#">Add Activity</b-dropdown-item>
           <b-dropdown-item href="#">Map</b-dropdown-item>
@@ -31,10 +31,10 @@
           <b-dropdown-item href="#">Sign Out</b-dropdown-item>
         </b-nav-item-dropdown> -->
 
-          <b-navbar-nav>
+          <!-- <b-navbar-nav> -->
             <b-nav-item class = "circle"></b-nav-item>
             <b-nav-item href="#" class = "profileCircle"></b-nav-item>
-          </b-navbar-nav>
+          <!-- </b-navbar-nav> -->
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -53,28 +53,30 @@ export default {
 
 .profileCircle{
         position: relative;
-        top: 100%;
-        left: 100%;
-        margin-top:-40px;
-        margin-left:-60px;
+        /* top: 100%;
+        left: 100%; */
+        /* margin-top:-40px;
+        margin-left:-60px; */
         width: 40px;
         height: 40px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
         background: black;
+        transform: translateX(-20px);
 }
 .circle {
         position: relative;
-        top: 100%;
-        left: 100%;
-        margin-top: -40px;
-        margin-left: -10px;
+        /* top: 100%;
+        left: 100%; */
+        /* margin-top: -40px;
+        margin-left: -10px; */
         width: 40px;
         height: 40px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
         background: red;
+        transform: translateX(30px);
 }
 </style>
