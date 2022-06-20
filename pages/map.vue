@@ -5,11 +5,11 @@
     <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
     padding-top: 20px; padding-left: 175px; ">
     </h1>
-    <input v-model="location" type="radio" id="bg" name="location" value="Botanic Gardens" @click="getlatlong()" checked>
+    <input v-model="location" type="radio" id="bg" name="location" value="Botanic Gardens" @change="getlatlong()">
     <label for="bg">Botanic Gardens</label><br>
-    <input v-model="location" type="radio" id="mbs" name="location" value="Marina Bay Sands" @click="getlatlong()">
+    <input v-model="location" type="radio" id="mbs" name="location" value="Marina Bay Sands" @change="getlatlong()">
     <label for="mbs">Marina Bay Sands</label><br>
-    <input v-model="location" type="radio" id="uss" name="location" value="Universal Studios Singapore" @click="getlatlong()">
+    <input v-model="location" type="radio" id="uss" name="location" value="Universal Studios Singapore" @change="getlatlong()">
     <label for="uss">Universal Studios Singapore</label>
     <l-map style="height: 300px" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution">
@@ -28,7 +28,7 @@ export default {
   
   data () {
     return {
-      location: 'Botanic Gardens',
+      location: '',
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
