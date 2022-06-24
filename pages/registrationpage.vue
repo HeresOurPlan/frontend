@@ -14,6 +14,9 @@
         <input v-model="email" type="email" placeholder="Email" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
+        <input v-model="name" type="text" placeholder="Name" style = "background-color: #F2E8CF; width: 25%;
+        color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+        <br/><br/>
         <input v-model="username" type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
@@ -38,7 +41,9 @@
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
     </div>
-
+    <b-alert :show="alertShown" :variant="alertVariant">
+      {{ alertMsg }}
+    </b-alert>
     <div class="buttonHolder">
       <input type='button' value = "Sign up" style="color: black; font-weight: bold;" @click="submitForm">
     </div>
@@ -60,6 +65,7 @@ export default {
   data() {
     return {
       username: "",
+      name: "",
       password: "",
       confirm_password: "",
       email: "",
@@ -74,6 +80,7 @@ export default {
   methods: {
     async submitForm() {
       console.log(this.username);
+      console.log(this.name)
       console.log(this.password);
       console.log(this.confirm_password);
       console.log(this.email);
@@ -82,6 +89,7 @@ export default {
       console.log(this.contact);
       const result = await this.$axios.$post("http://localhost:5000/register", {
         username: this.username,
+        name: this.name,
         password: this.password,
         confirm_password: this.confirm_password,
         email: this.email,
@@ -89,16 +97,29 @@ export default {
         dob: this.dob,
         contact: this.contact
       })
-      if (result.login_result) {
+
+      if (result.registration_result == 'wrongpassword') {
         this.alertShown = true
-        this.alertMsg = "Login successful"
-        this.alertVariant = "success"
-        window.location.href = "/main"
-      } else {
+        this.alertMsg = "Your passwords do not match"
+        this.alertVariant = "danger"
+        console.log('wrong pass')
+      }
+        else if (result.registration_result == 'invalidemail') {
         this.alertShown = true
-        this.alertMsg = "Login failed"
+        this.alertMsg = "Please enter a valid email"
         this.alertVariant = "danger"
       }
+        else if (result.registration_result) {
+        this.alertShown = true
+        this.alertMsg = "Registration successful"
+        this.alertVariant = "success"
+        window.location.href = "/main"
+        }
+        else {
+        this.alertShown = true
+        this.alertMsg = "Login unsuccessful"
+        this.alertVariant = "danger"
+        }
 
     }
   }
