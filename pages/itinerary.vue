@@ -11,7 +11,7 @@
     </h1>
 
     <b-container-fluid>
-        <div class="row-fluid scrollable" style="width:100%; height:100%">
+        <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
             <div class="locations" v-for="shop in shops" :key="shop">
                 <img class="square" :src="shop.image">
                 <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
@@ -30,6 +30,7 @@
     import Navbar from "@/components/Navbar.vue";
 
     export default {
+        
     name: 'Itinerary',
     data() {
         return {
@@ -54,10 +55,23 @@
                 "image": "https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
                 "text":  "Arcade",
             },
-        ]
+        ],
+        fetched: []
         }
     },
+    async fetch() {
+        this.fetched = await this.$axios.$get("http://localhost:5000/activities");
+        console.log(this.fetched)
+    },
+
     components: { Navbar },
+    methods: {
+    async test() {
+      const result = await this.$axios.$post("http://localhost:5000/activities")
+      console.log(result['Test']['category'])
+
+    }
+  }
 }
 
 
