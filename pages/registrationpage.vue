@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 style="color:#BC4749; font-family:merriweather; font-size: 70px; padding-left: 50px;">
+    <h1 style="color:#BC4749; font-family:merriweather; font-size: 70px; padding-left: 50px; text-align: center">
       <strong>
       <i>
         Here's<br>
@@ -109,6 +109,16 @@ export default {
         this.alertMsg = "Please enter a valid email"
         this.alertVariant = "danger"
       }
+        else if (result.registration_result == 'usernametaken') {
+          this.alertShown = true
+          this.alertMsg = "Your username has been taken"
+          this.alertVariant = "danger"
+        }
+        else if (result.registration_result == 'emailtaken') {
+          this.alertShown = true
+          this.alertMsg = "Your email has been taken"
+          this.alertVariant = "danger"
+        }
         else if (result.registration_result) {
         this.alertShown = true
         this.alertMsg = "Registration successful"
