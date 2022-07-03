@@ -15,7 +15,15 @@
       <l-tile-layer :url="url" :attribution="attribution">
       </l-tile-layer>
       <l-marker v-for="item in markers" :key="item" :lat-lng="item.coord">
-      <l-tooltip :content="item.name" :options="options"></l-tooltip>
+          <!-- <l-popup>
+            <div id='latlong'>
+              {{ item.coord }}
+            </div>
+            <button @click="addlocation">Add in Itinerary</button>
+          </l-popup> -->
+      <l-tooltip :content="item.name" :options="options">
+        <!-- <button @click="addlocation">Add in Itinerary</button> -->
+      </l-tooltip>
       </l-marker>
     </l-map>
   </div>
@@ -39,6 +47,7 @@ export default {
                 {name:"Marina Bay Sands", coord: [1.2847, 103.8610]},
                 {name:"Universal Studios Singapore", coord: [1.2540, 103.8238]}]
     };
+    
   },
   components: { Navbar },
   methods: { 
