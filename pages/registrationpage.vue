@@ -22,7 +22,7 @@
         <br/><br/>
         <select v-model="gender" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-          <option value="default" selected="selected">Select Gender</option>
+          <option value="" disabled hidden>Select Gender</option>
           <option value="Female">Female</option>
           <option value="Male">Male</option>
           <option value="Others">Others</option>
