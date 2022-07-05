@@ -18,7 +18,18 @@
       @dragstart="dragging = true"
       @dragend="dragging = false"
     >
-      <l-tooltip :content="tooltipContent" :options="{ permanent: true }" />
+      <l-tooltip :options="{ permanent: true }" >
+        <b>{{this.address}}</b>
+        <br>
+        <hr />
+        <b>LAT: {{this.position.lat}}</b>
+        <br>
+        <b>LONG: {{this.position.lng}}</b>
+        <br>
+        <b-btn @click="() => alert('Hello!')">
+          This is a button!!
+        </b-btn>
+      </l-tooltip>
     </l-marker>
   </l-map>
   </div>
@@ -71,12 +82,6 @@ export default {
     tooltipContent() {
       if (this.dragging) return "...";
       if (this.loading) return "Loading...";
-      return `<strong>${this.address.replace(
-        ",",
-        "<br/>"
-      )}</strong> <hr/><strong>lat:</strong> ${
-        this.position.lat
-      }<br/> <strong>lng:</strong> ${this.position.lng}`;
     }
   },
   methods: {
