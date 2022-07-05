@@ -49,6 +49,8 @@ export default {
     };
     
   },
+
+
   components: { Navbar },
   methods: { 
     getlatlong: function() {
@@ -61,7 +63,8 @@ export default {
         this.zoom = 15;
         console.log(this.location)
         
-    }
-   }
-}
+    },
+
+  }
+};
 </script>
