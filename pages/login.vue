@@ -64,12 +64,13 @@ export default {
         this.alertMsg = "Login successful"
         this.alertVariant = "success"
         window.location.href = "/main"
+        this.$session.start();
+        this.$session.set("jwt", token);
       } else {
         this.alertShown = true
         this.alertMsg = "Login failed"
         this.alertVariant = "danger"
       }
-
     }
   }
 }

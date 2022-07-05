@@ -60,6 +60,11 @@ import Navbar from "@/components/Navbar.vue";
 
 export default {
   components: { Navbar },
+
+    async fetch() {
+    this.fetched = await this.$axios.$get("http://localhost:5000/activities");
+    console.log(this.fetched)
+    },
    }
 </script>
 
