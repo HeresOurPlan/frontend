@@ -17,31 +17,67 @@
                     </h1>
                 </b-col>
                 <b-col cols="4">
-                    <div class="profileCircle" style="margin:22.5px"></div>
+                    <div class="profileCircle" style="transform: translateX(50%);"></div>
                 </b-col>
                 </b-row>
         </b-container>
 
         
-        <b-container fluid>
-            <div class="profileDetails">
-                <i style = "font-family: merriweather;">Username:</i>
-                <br/><br/>
-                <i style = "font-family: merriweather;">Password:</i>
-                <br/><br/>
-                <i style = "font-family: merriweather;">Name:</i>
-                <br/><br/>
-                <i style = "font-family: merriweather;">Gender:</i>
-                <br/><br/>
-                <i style = "font-family: merriweather;">DOB:</i>
-                <br/><br/>
-                <i style = "font-family: merriweather;">Email:</i>
-                <br/><br/>
-                <i style = "font-family: merriweather;">Contact Num:</i>
-                <br/><br/>
+        <b-container fluid style="padding-bottom:90px;">
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Username:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Password:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Name:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Gender:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    DoB:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Email:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Contact Num:
+                </b-col>
+                <b-col>
+                </b-col> 
+            </b-row>
               <!-- placeholder in input should be current values in DB -->
               <!-- cannot Align the input names in one column -->
-            </div>
+              
+
+            <br><br>
             <div class="buttonHolder">
                 <router-link to ="/profileEdit">
                 <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="submitForm">
@@ -92,11 +128,11 @@ export default {
         left: 100%; */
         /* margin-top:-40px;
         margin-left:-60px; */
-        width: 40px;
-        height: 40px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        border-radius: 20px;
+        width: 90px;
+        height: 90px;
+        -webkit-border-radius: 45px;
+        -moz-border-radius: 45px;
+        border-radius: 45px;
         background: black;
         transform: translateX(-20px);
 }
