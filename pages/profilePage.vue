@@ -1,26 +1,25 @@
 <template>
     <div>
         <Navbar />
-            <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
-            padding-top: 20px; padding-left: 175px; ">
-            </h1>
-        <b-container fluid>
-            <b-row>
-            <b-col>
-        <h1 style="color:#BC4749; font-family:merriweather; font-size: 70px; padding-left: 50px; text-align: left">
-        <strong>
-                <i>
-                    Here's<br>
-                    Our<br>
-                    Plan<br>
-                </i>
-            </strong>
-            </h1>
-            </b-col>
-            <b-col>
-                <div class="profileCircle"></div>
-            </b-col>
-            </b-row>
+
+        <b-container fluid style="padding-top:30px;height:150px;padding-bottom:50px">
+            <b-row align-h="center">
+                <b-col cols="6">
+                    <h1 style="color:#BC4749;
+                               font-family:merriweather;
+                               font-size: 70px;
+                               padding-right: 50px;
+                               text-align: left;
+                               font-style: italic;
+                               font-weight: bold;
+                               text-align: right">
+                        (Name)
+                    </h1>
+                </b-col>
+                <b-col cols="4">
+                    <div class="profileCircle" style="margin:22.5px"></div>
+                </b-col>
+                </b-row>
         </b-container>
 
         
