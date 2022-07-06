@@ -2,7 +2,7 @@
     <div>
     <Navbar />
     <h1 style="color: #BC4749; font-family: merriweather; font-size: 50px; 
-    padding-top: 20px; padding-left: 2%; ">
+    padding-top: 20px; padding-left: 2%; text-align: center">
         <strong>
         <i>
             Itinerary
@@ -19,6 +19,13 @@
             </div>
         </div>
     </b-container-fluid>
+
+
+    <br/><br/><br/><br/>
+
+    <div class = "icons">
+        <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
+    </div>
 
 
     </div>
@@ -56,18 +63,18 @@
                 "text":  "Arcade",
             },
         ],
-        fetched: []
+        indivactivity: []
         }
     },
     async fetch() {
-        this.fetched = await this.$axios.$get("http://localhost:5000/activities");
-        console.log(this.fetched)
+        this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
+        console.log(this.indivactivity)
     },
 
     components: { Navbar },
     methods: {
     async test() {
-      const result = await this.$axios.$post("http://localhost:5000/activities")
+      const result = await this.$axios.$post("http://localhost:8080/activities")
       console.log(result['Test']['category'])
 
     }
@@ -81,6 +88,10 @@
 <style>
     body{
         background-color: #FCF6E7;
+    }
+
+    .icons{
+        text-align: center;
     }
 
     .locations {

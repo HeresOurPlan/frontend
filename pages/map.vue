@@ -67,6 +67,7 @@ export default {
       center: [1.3521, 103.8198],
       // Singapore LatLng
       indivactivity: this.indivactivity,
+      // or is it indivactivity: []
     };
   },
 
