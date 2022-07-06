@@ -5,12 +5,19 @@
     <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
     padding-top: 20px; padding-left: 175px; ">
     </h1>
-    <b-select  v-model="location"  @change="getlatlong()">
+    <div class="mt-3"><strong>Activities in your Itinerary: </strong></div><br/>
+    <b-select 
+      v-model="location"
+      :options = "indivactivity"
+      value-field = "coord"
+      text-field = "title"
+      @change="getlatlong()">
+      <!-- <b-select-option v-for="item in fetched" :value="item.title"> {{ item.title }} </b-select-option>
       <b-select-option value="Botanic Gardens">Botanic</b-select-option>
       <b-select-option value="Marina Bay Sands">Marina</b-select-option>
       <b-select-option  value="Universal Studios Singapore" >USS</b-select-option>
       <b-select-option>a</b-select-option>
-      <b-select-option>a</b-select-option>
+      <b-select-option>a</b-select-option> -->
     </b-select>
     <!-- <inputtype="radio" id="bg" name="location" value="Botanic Gardens">
     <label for="bg">Botanic Gardens</label><br>
@@ -21,7 +28,7 @@
     <l-map style="height: 300px" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution">
       </l-tile-layer>
-      <l-marker v-for="item in markers" :key="item" :lat-lng="item.coord">
+      <l-marker v-for="item in indivactivity" :key="item" :lat-lng="item.coord">
           <!-- <l-popup>
             <div id='latlong'>
               {{ item.coord }}
@@ -33,6 +40,16 @@
       </l-tooltip>
       </l-marker>
     </l-map>
+
+
+  <br/><br/><br/><br/>
+
+    <div class = "icons">
+        <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
+    </div>
+
+
+
   </div>
 </template>
 
@@ -49,27 +66,23 @@ export default {
       zoom: 11,
       center: [1.3521, 103.8198],
       // Singapore LatLng
-      markers: [
-        { name: "Botanic Gardens", coord: [1.3138, 103.8159] },
-        { name: "Marina Bay Sands", coord: [1.2847, 103.861] },
-        { name: "Universal Studios Singapore", coord: [1.254, 103.8238] },
-      ],
+      indivactivity: this.indivactivity,
     };
   },
+
   async fetch() {
     // fetch the marker here
     // override this.markers
     // v-for upstairs
     // getlatlong refer to this.markers
-  },
+    this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
+    console.log(this.indivactivity)
+    },
+
   components: { Navbar },
   methods: {
     getlatlong: function () {
-      var dict = {
-        "Botanic Gardens": [1.3138, 103.8159],
-        "Marina Bay Sands": [1.2847, 103.861],
-        "Universal Studios Singapore": [1.254, 103.8238],
-      };
+      var dict = this.indivactivity;
       this.zoom = 15;
       setTimeout(() => {
         this.center = dict[this.location];
@@ -79,3 +92,10 @@ export default {
   },
 };
 </script>
+
+
+<style>
+    .icons{
+        text-align: center;
+    }
+</style>
