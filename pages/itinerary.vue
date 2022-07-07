@@ -63,9 +63,12 @@
                 "text":  "Arcade",
             },
         ],
+        fetched: false,
         indivactivity: []
         }
     },
+
+    fetchOnServer: false,
     async fetch() {
         this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
         console.log(this.indivactivity)

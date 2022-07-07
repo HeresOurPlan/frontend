@@ -68,9 +68,10 @@ export default {
       // Singapore LatLng
       indivactivity: this.indivactivity,
       // or is it indivactivity: []
+      fetched: false
     };
   },
-
+  fetchOnServer: false,
   async fetch() {
     // fetch the marker here
     // override this.markers
