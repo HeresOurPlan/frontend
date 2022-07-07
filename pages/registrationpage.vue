@@ -1,20 +1,12 @@
 <template>
   <div>
-    <h1
-      style="
-        color: #bc4749;
-        font-family: merriweather;
-        font-size: 70px;
-        padding-left: 50px;
-        text-align: center;
-      "
-    >
+    <h1 style="color:#BC4749; font-family:merriweather; font-size: 70px; padding-left: 50px; text-align: center">
       <strong>
-        <i>
-          Here's<br />
-          Our<br />
-          Plan<br />
-        </i>
+      <i>
+        Here's<br>
+        Our<br>
+        Plan<br>
+      </i>
       </strong>
     </h1>
 

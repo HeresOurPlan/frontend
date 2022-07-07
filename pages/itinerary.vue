@@ -14,7 +14,7 @@
         <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
             <div class="locations" v-for="shop in shops" :key="shop">
                 <img class="square" :src="shop.image">
-                <i class="fa-solid fa-ellipsis-vertical fa-2x"></i>
+                <!-- <i class="fa-solid fa-ellipsis-vertical fa-2x"></i> -->
                 {{ shop.text }}
             </div>
         </div>
