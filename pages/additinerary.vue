@@ -19,7 +19,7 @@
         <br/><br/>
         <select v-model="itineraryRank" placeholder="Rank on Itinerary (1-5)" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-        <option value="" hidden disabled>Rank on Itinerary (1-5)</option>
+        <option value="" selected hidden disabled>Rank on Itinerary (1-5)</option>
         <option value="1">1</option>
         <option value="2">2</option>
         <option value="3">3</option>
