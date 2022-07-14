@@ -4,51 +4,110 @@
             <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
             padding-top: 20px; padding-left: 175px; ">
             </h1>
+                <b-container fluid style="padding-top:30px;height:150px;padding-bottom:50px">
+            <b-row align-h="center">
+                <b-col cols="6">
+                    <h1 style="color:#BC4749;
+                               font-family:merriweather;
+                               font-size: 70px;
+                               padding-right: 50px;
+                               text-align: left;
+                               font-style: italic;
+                               font-weight: bold;
+                               text-align: right">
+                        (Name)
+                    </h1>
+                </b-col>
+                <b-col cols="4">
+                    <label class="custom-file-upload">
+                    <input type="file"/>
+                    <div class="profileCircle" style="transform: translateX(50%);">
+                    </div>
+                    </label>
+                </b-col>
+                </b-row>
+        </b-container>
+
         
-        <b-container>
-            <div class="profileDetails">
-                <i style = "font-family: merriweather;">Username:</i>
-                  <input v-model="username" type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
+        <b-container fluid style="padding-bottom:90px;">
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Username:
+                </b-col>
+                <b-col>
+                  <input v-model="username" type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                  <br/><br/>
-                <i style = "font-family: merriweather;">Password:</i>
-                  <input v-model="password" type="password" placeholder="Password" style = "background-color: #F2E8CF; width: 25%;
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Password:
+                </b-col>
+                <b-col>
+                  <input v-model="password" type="text" placeholder="Password" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                  <br/><br/>
-                <i style = "font-family: merriweather;">Name:</i>
-                  <input v-model="name" type="text" placeholder="Name" style = "background-color: #F2E8CF; width: 25%;
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Name:
+                </b-col>
+                <b-col>
+                  <input v-model="name" type="text" placeholder="Name" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                  <br/><br/>
-                <i style = "font-family: merriweather;">Gender:</i>
-                  <select v-model="gender" type="text" style = "background-color: #F2E8CF; width: 25%;
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Gender:
+                </b-col>
+                <b-col>
+                  <select v-model="gender" type="text" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                       <option value="" disabled hidden>Select Gender</option>
                       <option value="Female">Female</option>
                       <option value="Male">Male</option>
                       <option value="Others">Others</option>
                   </select>
-                  <br/><br/>
-                <i style = "font-family: merriweather;">DOB:</i>
-                  <input v-model="dob" type="text" placeholder="DOB" style = "background-color: #F2E8CF; width: 25%;
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    DoB:
+                </b-col>
+                <b-col>
+                  <input v-model="dob" type="date" placeholder="DOB" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                  <br/><br/>
-                <i style = "font-family: merriweather;">Email:</i>
-                  <input v-model="email" type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 25%;
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Email:
+                </b-col>
+                <b-col>
+                  <input v-model="email" type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                  <br/><br/>
-                <i style = "font-family: merriweather;">Contact Num:</i>
-                  <input v-model="contact" type="text" placeholder="Contact Number" style = "background-color: #F2E8CF; width: 25%;
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                    Contact Num:
+                </b-col>
+                <b-col>
+                  <input v-model="contact" type="text" placeholder="Contact Number" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                  <br/><br/>
-              <!-- placeholder in input should be current values in DB -->
-              <!-- cannot Align the input names in one column -->
-            </div>
+                </b-col> 
+            </b-row>
+
+            <br><br>
             <div class="buttonHolder">
-              <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="submitForm">
+                <router-link to ="/profileEdit">
+                <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="submitForm">
+                </router-link>
             </div>
-            <!-- cannot get edit text to change to white. -->
         </b-container>
     </div>
+
 
 
 </template>
@@ -87,8 +146,30 @@ export default {
   font-style: italic;
   text-align: center; 
   }
-  .profileDetails{ text-align: center; }
+  input[type="file"] {
+  display: none;
+  }
+  .imageFile {
+      border: 1px solid black;
+      display: inline-block;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
   .buttonHolder{ text-align: center; }
+  .profileCircle{
+        position: relative;
+        /* top: 100%;
+        left: 100%; */
+        /* margin-top:-40px;
+        margin-left:-60px; */
+        width: 90px;
+        height: 90px;
+        -webkit-border-radius: 45px;
+        -moz-border-radius: 45px;
+        border-radius: 45px;
+        background: black;
+        transform: translateX(-20px);
+}
 </style>
 
 <!-- How to make it single page, have a layover to Confirm the edit, refer to figma -->
