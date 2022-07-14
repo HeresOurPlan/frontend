@@ -26,12 +26,18 @@
         <br>
         <b>LONG: {{this.position.lng}}</b>
         <br>
-        <b-btn @click="() => alert('Hello!')">
-          This is a button!!
-        </b-btn>
+        
       </l-tooltip>
     </l-marker>
   </l-map>
+  <br>
+    <div class="col-md-12 text-center">
+      <b-btn class="btn btn-danger" @click="storingcoords" align="center">
+            <a href="additinerary.vue" name="addedActivity" style="color: white; font-weight: bold;">
+              Add This Activity!
+            </a>
+      </b-btn>
+    </div>
   </div>
 </template>
 <script>
@@ -118,7 +124,16 @@ export default {
           };
         });
       }
-    }
+    },
+    // storingcoords() {
+    //   if (this.onMapClick != ""):
+    //     to_store = this.onMapClick;
+    //     console.log(to_store);
+    //     this.$session.set("addActivity", to_store);
+    //   else:
+    //     return "Click on a location!";
+    // }
+
   }
 };
 </script>

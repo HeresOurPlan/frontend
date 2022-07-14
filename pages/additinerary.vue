@@ -14,7 +14,10 @@
         <input v-model="activityName" placeholder="Name of Activity" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
-        <input v-model="postalCode" placeholder="Postal Code" style = "background-color: #F2E8CF; width: 25%;
+        <input v-model="address" placeholder="Address" style = "background-color: #F2E8CF; width: 25%;
+        color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+        <br/><br/>
+        <input v-model="locationCoord" placeholder="Coordinates" style = "background-color: #F2E8CF; width: 25%;
         color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
         <br/><br/>
         <select v-model="itineraryRank" placeholder="Rank on Itinerary (1-5)" style = "background-color: #F2E8CF; width: 25%;
@@ -52,7 +55,13 @@
     data() {
         return {
         fetched: false,
-        indivactivity: []
+        indivactivity: [],
+        activityName: "",
+        address: "",
+        locationCoord: "",
+        itineraryRank: "",
+        description: "",
+        img: ""
         }
     },
 
@@ -67,14 +76,30 @@
     async test() {
         const result = await this.$axios.$post("http://localhost:8080/activities")
         console.log(result['Test']['category'])
-
-    }
-  }
-}
-
-
+    },
     
+    async submitForm() {
+        console.log(this.username); 
+        console.log(this.activityName);
+        console.log(this.address);
+        console.log(this.locationCoord);
+        console.log(this.itineraryRank);
+        console.log(this.description);
+        console.log(this.img);
+        const result = await this.$axios.$post("http://localhost:8080/useractivities", {
+            username: this.username,
+            activityName: this.activityName,
+            address: this.address,
+            locationCoord: this.locationCoord,
+            rank: this.itineraryRank,
+            description: this.description,
+            img: this.img
+        });
+    },
+    }
+}
 </script>
+
 
 <style>
     .buttonHolder{
