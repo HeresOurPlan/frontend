@@ -97,13 +97,14 @@ export default {
   components: { Navbar },
   data() {
     return {
-      fetched: false
+      fetched: false,
+      sessionUser: this.user
     }
   },
   fetchOnServer: false,
 
     async fetch() {
-    this.fetched = await this.$axios.$get("http://localhost:5000/activities");
+    this.fetched = await this.$axios.$get("http://localhost:8080/user");
     console.log(this.fetched)
     },
    }

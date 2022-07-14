@@ -65,7 +65,7 @@ export default {
   },
   fetchOnServer: false,
   async fetch() {
-    this.fetched = await this.$axios.$get("http://localhost:5000/activities");
+    this.fetched = await this.$axios.$get("http://localhost:8080/user");
     console.log(this.fetched)
     },
    }

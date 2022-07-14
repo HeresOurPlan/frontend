@@ -77,7 +77,7 @@ export default {
     // override this.markers
     // v-for upstairs
     // getlatlong refer to this.markers
-    this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
+    this.indivactivity = await this.$axios.$get("http://localhost:8080/useractivities");
     console.log(this.indivactivity)
     },
 
