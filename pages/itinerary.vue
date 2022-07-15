@@ -112,15 +112,15 @@
     }
 
     .information {
-        background-color:#fcf6e7;
-        color:#BC4749;
+        background-color:#BC4749;
+        color:white;
         font-style:normal;
         padding-top:10px;
         padding-bottom:10px;
         padding-left:30px;
         padding-right:30px;
         margin-top:20px;
-        margin-left:40px;
+        margin-left:27.5px;
         margin-right:40px;
         border-radius:5px;
         overflow:scroll;
