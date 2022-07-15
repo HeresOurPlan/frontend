@@ -71,31 +71,4 @@ export default {
         height: 200px;
     }
 
-    .profileCircle{
-        position: relative;
-        top: 100%;
-        left: 100%;
-        margin-top:-50px;
-        margin-left:-110px;
-        width: 50px;
-        height: 50px;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        border-radius: 25px;
-        background: black;
-    }
-    .circle {
-        position: relative;
-        top: 100%;
-        left: 100%;
-        margin-top: -10px;
-        margin-left: -100px;
-        width: 50px;
-        height: 50px;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        border-radius: 25px;
-        background: red;
-    }
-
 </style>
