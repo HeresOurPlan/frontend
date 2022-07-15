@@ -15,14 +15,18 @@
         <b-nav-item href="/main">{{ getCurrentUserName() }}</b-nav-item>
 
         <b-nav-form>
+          <b-col>
           <b-form-input size="sm" class="mr-sm-2" placeholder="Search Locations"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+          </b-col>
+          <b-col>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit" href="/new_loc_map">Search</b-button>
+          </b-col>
         </b-nav-form>
 
         <b-nav-item-dropdown text="Where to?" class="ml-2">
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
-          <b-dropdown-item href="#">Add Activity</b-dropdown-item>
-          <b-dropdown-item href="#">Map</b-dropdown-item>
+          <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
+          <b-dropdown-item href="/map">Map</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <!-- <b-nav-item-dropdown right> 
@@ -34,7 +38,6 @@
         </b-nav-item-dropdown> -->
 
           <!-- <b-navbar-nav> -->
-            <b-nav-item class = "circle"></b-nav-item>
             <b-nav-item href="#" class = "profileCircle"></b-nav-item>
           <!-- </b-navbar-nav> -->
       </b-navbar-nav>
@@ -72,30 +75,12 @@ export default {
 
 .profileCircle{
         position: relative;
-        /* top: 100%;
-        left: 100%; */
-        /* margin-top:-40px;
-        margin-left:-60px; */
         width: 40px;
         height: 40px;
         -webkit-border-radius: 20px;
         -moz-border-radius: 20px;
         border-radius: 20px;
         background: black;
-        transform: translateX(-20px);
-}
-.circle {
-        position: relative;
-        /* top: 100%;
-        left: 100%; */
-        /* margin-top: -40px;
-        margin-left: -10px; */
-        width: 40px;
-        height: 40px;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        border-radius: 20px;
-        background: red;
-        transform: translateX(30px);
+        transform: translateX(5%) translateY(-10%);
 }
 </style>

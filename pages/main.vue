@@ -1,8 +1,8 @@
 <template>
     <div>
     <Navbar />
-    <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px; 
-    padding-top: 20px; padding-left: 175px; ">
+    <h1 style="color: #BC4749; font-family: merriweather; font-size: 31px; 
+    padding-top: 1%; padding-left: 12%; ">
       <strong>
       <i>
         Last Viewed Activities
@@ -69,33 +69,6 @@ export default {
     .square {
         width: 200px;
         height: 200px;
-    }
-
-    .profileCircle{
-        position: relative;
-        top: 100%;
-        left: 100%;
-        margin-top:-50px;
-        margin-left:-110px;
-        width: 50px;
-        height: 50px;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        border-radius: 25px;
-        background: black;
-    }
-    .circle {
-        position: relative;
-        top: 100%;
-        left: 100%;
-        margin-top: -10px;
-        margin-left: -100px;
-        width: 50px;
-        height: 50px;
-        -webkit-border-radius: 25px;
-        -moz-border-radius: 25px;
-        border-radius: 25px;
-        background: red;
     }
 
 </style>

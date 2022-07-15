@@ -12,13 +12,14 @@
 
     <b-container-fluid>
         <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
-            <details class="locations" v-for="shop in shops" :key="shop">
+            <details class="locations" v-for="(shop,index) in shops" :key="shop">
                 <summary>&emsp;<img class="square" :src="shop.image">&ensp;
-                <!-- <i class="fa-solid fa-ellipsis-vertical fa-2x"></i> -->
-                {{ shop.text }}
+                <b>{{index+1}}. {{ shop.text }}</b> @
+                <i>{{shop.location}}, S({{shop.postal}})</i>
                 </summary>
                 <div class='information'>
-                if click alr show this</div>
+                    <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
+                </div>
             </details>
         </div>
     </b-container-fluid>
@@ -48,22 +49,47 @@
             {
                 "image": "https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80",
                 "text":  "McDonald's",
+                "location": "100 Charming Avenue",
+                "postal":'888888',
+                "opening_hours":'10am',
+                "closing_hours":'5pm',
+                "category":'F&B'
             },
             {
                 "image": "https://static.mothership.sg/1/2021/07/mos-burger-closed.jpeg",
                 "text":  "Mos Burger",
+                "location": "100 Charming Avenue",
+                "postal":'888888',
+                "opening_hours":'10am',
+                "closing_hours":'5pm',
+                "category":'F&B'
             },
             {
                 "image": "https://cdn.britannica.com/08/193908-050-66767D57/view-Subway-restaurant-Bangkok-Thailand.jpg",
                 "text":  "Subway",
+                "location": "100 Charming Avenue",
+                "postal":'888888',
+                "opening_hours":'10am',
+                "closing_hours":'5pm',
+                "category":'F&B'
             },
             {
                 "image": "https://images.unsplash.com/photo-1532876688342-a79b7fa5c473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80",
                 "text":  "McDonald's",
+                "location": "100 Charming Avenue",
+                "postal":'888888',
+                "opening_hours":'10am',
+                "closing_hours":'5pm',
+                "category":'F&B'
             },
             {
                 "image": "https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
                 "text":  "Arcade",
+                "location": "100 Charming Avenue",
+                "postal":'888888',
+                "opening_hours":'10am',
+                "closing_hours":'5pm',
+                "category":'F&B'
             },
         ],
         fetched: false,
@@ -107,8 +133,8 @@
         margin: 15px;
         padding: 20px 50px;
         cursor: pointer;
-        font-style: italic;
         border-radius: 15px;
+        white-space:initial;
     }
 
     .information {
@@ -123,7 +149,8 @@
         margin-left:27.5px;
         margin-right:40px;
         border-radius:5px;
-        overflow:scroll;
+        white-space: initial;
+        cursor:auto;
     }
 
     .scrollable {
