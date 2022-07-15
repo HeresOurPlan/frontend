@@ -14,13 +14,13 @@
       <b-navbar-nav class="ml-auto">
         <b-nav-form>
           <b-form-input size="sm" class="mr-sm-2" placeholder="Search Locations"></b-form-input>
-          <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
+          <b-button size="sm" class="my-2 my-sm-0" type="submit" href="/new_loc_map">Search</b-button>
         </b-nav-form>
 
         <b-nav-item-dropdown text="Where to?" class="ml-2">
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
-          <b-dropdown-item href="#">Add Activity</b-dropdown-item>
-          <b-dropdown-item href="#">Map</b-dropdown-item>
+          <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
+          <b-dropdown-item href="/map">Map</b-dropdown-item>
         </b-nav-item-dropdown>
 
         <!-- <b-nav-item-dropdown right> 
