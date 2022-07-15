@@ -1,8 +1,8 @@
 <template>
     <div>
     <Navbar />
-    <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px; 
-    padding-top: 20px; padding-left: 175px; ">
+    <h1 style="color: #BC4749; font-family: merriweather; font-size: 31px; 
+    padding-top: 1%; padding-left: 12%; ">
       <strong>
       <i>
         Last Viewed Activities
