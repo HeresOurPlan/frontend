@@ -12,6 +12,8 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
+        <b-nav-item href="/main">{{ getCurrentUserName() }}</b-nav-item>
+
         <b-nav-form>
           <b-form-input size="sm" class="mr-sm-2" placeholder="Search Locations"></b-form-input>
           <b-button size="sm" class="my-2 my-sm-0" type="submit">Search</b-button>
@@ -41,8 +43,25 @@
 </template>
 
 <script>
+import jwt_decode from "jwt-decode"
+
 export default {
     name: 'Navbar',
+    fetchOnServer: false,
+    methods: {
+      getCurrentUserName() {
+        if (process.browser) {
+          const token = localStorage.getItem("token")
+          if (token === null) {
+            return "Guest"
+          } else {
+            const decoded_token = jwt_decode(token)
+            console.log(decoded_token)
+            return decoded_token["user"]
+          }
+        }
+      }
+    }
 }
 </script>
 

@@ -55,17 +55,19 @@ export default {
     async submitForm() {
       console.log(this.username);
       console.log(this.password);
-      const result = await this.$axios.$post("http://localhost:8080/login", {
+      const result = await this.$axios.post("http://localhost:8080/login", {
         username: this.username,
         password: this.password
       })
-      if (result.login_result) {
+      if (result.data.login_result) {
         this.alertShown = true
         this.alertMsg = "Login successful"
         this.alertVariant = "success"
+        if (process.client) {
+          console.log(Object.keys(result.headers))
+          localStorage.setItem("token", result.headers["authorization"])
+        }
         window.location.href = "/main"
-        this.$session.start();
-        this.$session.set("jwt", token);
       } else {
         this.alertShown = true
         this.alertMsg = "Login failed"
