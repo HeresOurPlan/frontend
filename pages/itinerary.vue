@@ -14,7 +14,6 @@
         <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
             <details class="locations" v-for="(shop,index) in shops" :key="shop">
                 <summary>&emsp;<img class="square" :src="shop.image">&ensp;
-                <!-- <i class="fa-solid fa-ellipsis-vertical fa-2x"></i> -->
                 <b>{{index+1}}. {{ shop.text }}</b> @
                 <i>{{shop.location}}, S({{shop.postal}})</i>
                 </summary>
@@ -135,6 +134,7 @@
         padding: 20px 50px;
         cursor: pointer;
         border-radius: 15px;
+        white-space:initial;
     }
 
     .information {
@@ -149,7 +149,8 @@
         margin-left:27.5px;
         margin-right:40px;
         border-radius:5px;
-        overflow:scroll;
+        white-space: initial;
+        cursor:auto;
     }
 
     .scrollable {

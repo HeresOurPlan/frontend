@@ -4,24 +4,23 @@
             <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
             padding-top: 20px; padding-left: 175px; ">
             </h1>
-                <b-container fluid style="padding-top:30px;height:150px;padding-bottom:50px">
-            <b-row align-h="center">
-                <b-col cols="6">
+                <b-container fluid>
+            <b-row align-h="center" align-v="center" style="height:100%">
+                <b-col>
                     <h1 style="color:#BC4749;
-                               font-family:merriweather;
-                               font-size: 70px;
-                               padding-right: 50px;
-                               text-align: left;
-                               font-style: italic;
-                               font-weight: bold;
-                               text-align: right">
-                        (Name)
+                        font-family:merriweather;
+                        font-size: 45px;
+                        padding-top: 3%;
+                        text-align: right;
+                        font-style: italic;
+                        font-weight: bold;">
+                        Zachary Lian
                     </h1>
                 </b-col>
-                <b-col cols="4">
+                <b-col>
                     <label class="custom-file-upload">
                     <input type="file"/>
-                    <div class="profileCircle" style="transform: translateX(50%);">
+                    <div class="profileCircle" style="transform: translateX(25%) translateY(5%);">
                     </div>
                     </label>
                 </b-col>
@@ -29,42 +28,42 @@
         </b-container>
 
         
-        <b-container fluid style="padding-bottom:90px;">
+        <b-container fluid style="padding-bottom:90px; padding-top:3%">
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold;">
                     Username:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
                   <input v-model="username" type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
                     Password:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
                   <input v-model="password" type="text" placeholder="Password" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
                     Name:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
                   <input v-model="name" type="text" placeholder="Name" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
                     Gender:
                 </b-col>
-                <b-col>
-                  <select v-model="gender" type="text" style = "background-color: #F2E8CF; width: 75%;
+                <b-col class="col-lg-4">
+                  <select v-model="gender" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                      <option value="" disabled hidden>Select Gender</option>
+                      <option value="undefined" disabled hidden>Select Gender</option>
                       <option value="Female">Female</option>
                       <option value="Male">Male</option>
                       <option value="Others">Others</option>
@@ -72,28 +71,28 @@
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
                     DoB:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
                   <input v-model="dob" type="date" placeholder="DOB" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
                     Email:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
                   <input v-model="email" type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
                     Contact Num:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
                   <input v-model="contact" type="text" placeholder="Contact Number" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
