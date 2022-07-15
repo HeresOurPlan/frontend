@@ -149,7 +149,6 @@
         margin-left:27.5px;
         margin-right:40px;
         border-radius:5px;
-        overflow:scroll;
         white-space: initial;
         cursor:auto;
     }
