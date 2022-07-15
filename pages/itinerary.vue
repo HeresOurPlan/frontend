@@ -12,11 +12,14 @@
 
     <b-container-fluid>
         <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
-            <div class="locations" v-for="shop in shops" :key="shop">
-                <img class="square" :src="shop.image">
+            <details class="locations" v-for="shop in shops" :key="shop">
+                <summary>&emsp;<img class="square" :src="shop.image">&ensp;
                 <!-- <i class="fa-solid fa-ellipsis-vertical fa-2x"></i> -->
                 {{ shop.text }}
-            </div>
+                </summary>
+                <div class='information'>
+                if click alr show this</div>
+            </details>
         </div>
     </b-container-fluid>
 
@@ -106,6 +109,21 @@
         cursor: pointer;
         font-style: italic;
         border-radius: 15px;
+    }
+
+    .information {
+        background-color:#fcf6e7;
+        color:#BC4749;
+        font-style:normal;
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-left:30px;
+        padding-right:30px;
+        margin-top:20px;
+        margin-left:40px;
+        margin-right:40px;
+        border-radius:5px;
+        overflow:scroll;
     }
 
     .scrollable {
