@@ -16,6 +16,17 @@
                 <img class="square" :src="imgUrl">
             </div>
         </div>
+
+            <!--
+            <a href="https://www.example.com" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal" >example</a>  
+<a href="https://www.bing.com"    onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal">bing</a>
+
+<div id="modal1" class="modal">
+  <span onclick="document.getElementById('modal1').style.display='none'; document.getElementById('iframe1').src =''" class="">&times;</span>
+  <iframe id="iframe1" height="300px" width="100%" src="" name="iframe_modal"></iframe>
+  </div>
+  -->
+
     </b-container>
     
     <br/><br/><br/><br/>
@@ -69,6 +80,20 @@ export default {
     .square {
         width: 200px;
         height: 200px;
+    }
+
+    .modal {
+        z-index:3;
+        display:none;
+        padding-top:50px;
+        position:fixed;
+        left:0;
+        top:0;
+        width:30%;
+        height:30%;
+        overflow:scroll;
+        background-color:rgb(0,0,0);
+        background-color:rgba(0,0,0,0.4)
     }
 
 </style>

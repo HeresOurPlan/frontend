@@ -14,13 +14,46 @@
         <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
             <details class="locations" v-for="(shop,index) in shops" :key="shop">
                 <summary>&emsp;<img class="square" :src="shop.image">&ensp;
-                <b>{{index+1}}. {{ shop.text }}</b> @
-                <i>{{shop.location}}, S({{shop.postal}})</i>
+                <span style="height:100px"><b>{{index+1}}. {{ shop.text }}</b> @
+                <i>{{shop.location}}, S({{shop.postal}})</i></span>
                 </summary>
                 <div class='information'>
                     <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
                 </div>
             </details>
+
+            <!--
+            <details class="locations" v-for="(shop,index) in shops" :key="shop">
+            <summary>
+                <b-container fluid>
+                    <b-row>
+                        <b-col cols="2">
+                            &emsp;<img class="square" :src="shop.image">
+                        </b-col>
+
+                        <b-col cols="8">
+                            <b>{{index+1}}. {{ shop.text }}</b> @
+                            <i>{{shop.location}}, S({{shop.postal}})</i>
+                            
+                        </b-col>
+                    </b-row>
+                </b-container>
+            </summary>
+                            
+            <div class='information'>
+                <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
+            </div>
+                
+            </details>
+
+            THIS ACTUALLY looks weirder than the initial one dskfjhsdkjf now everything is completely out of whack... 
+            still struggling to make the words adjustible....
+
+            if just wna make it less ugly then ig can just get rid of the location in the title Ahaha...
+
+            -->
+
+
         </div>
     </b-container-fluid>
 
@@ -31,9 +64,9 @@
         <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
 
-
+    <br/><br/><br/><br/>    <br/>
     </div>
-    
+
 
 </template>
 
