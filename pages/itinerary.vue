@@ -18,6 +18,7 @@
                 <i>{{shop.location}}, S({{shop.postal}})</i></span>
                 </summary>
                 <div class='information'>
+                    <!--<b>Location:</b> {{shop.location}}, S({{shop.postal}})-->
                     <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
                 </div>
             </details>
