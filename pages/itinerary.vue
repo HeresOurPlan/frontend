@@ -20,9 +20,29 @@
                 <!-- @
                 <i>{{shop.location}}, S({{shop.postal}})</i> --></span>
                 </summary>
-                <div class='information'>
+                <div class="information">
                     <b>Location:</b> {{shop.location}}, S({{shop.postal}})<br>
                     <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
+                </div>
+                <div class="activityButton">
+                    <b-button v-b-modal.modal-1 no-close-on-backdrop ok-only>
+                        Complete Activity
+                    </b-button>
+                    <b-modal id="modal-1" title="Activity Complete">
+                        <b-form-rating v-model="value"></b-form-rating>
+                        <p class="mt-2">Value: {{ value }}</p>
+                        <br />
+                        <input type="text" value="Feedback on Activity..."/>
+                    </b-modal>
+
+                    <b-button v-b-modal.modal-1 no-close-on-backdrop ok-only>
+                        Delete Activity
+                    </b-button>
+                    <b-modal id="modal-1" title="Deleting Activity">
+                        <b-form-rating v-model="value"></b-form-rating>
+                        <p class="mt-2">Value: {{ value }}</p>
+                        <input type="text" value="Feedback on Activity..."/>
+                    </b-modal>
                 </div>
             </details>
 
@@ -46,6 +66,12 @@
     import Navbar from "@/components/Navbar.vue";
 
     export default {
+    
+    data() {
+      return {
+        value: null
+        }
+    },
         
     name: 'Itinerary',
     data() {
@@ -166,5 +192,9 @@
     .square {
         width: 100px;
         height: 100px;
+    }
+    input[type="text"]{
+        width: 85%;
+        height: 100%;
     }
 </style>
