@@ -12,7 +12,7 @@
         placeholder="Name of Activity"
         style="
           background-color: #f2e8cf;
-          width: 25%;
+          width: 37%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -25,7 +25,7 @@
         placeholder="Address"
         style="
           background-color: #f2e8cf;
-          width: 25%;
+          width: 37%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -38,7 +38,7 @@
         placeholder="Coordinates"
         style="
           background-color: #f2e8cf;
-          width: 25%;
+          width: 37%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -51,7 +51,7 @@
         placeholder="Rank on Itinerary (1-5)"
         style="
           background-color: #f2e8cf;
-          width: 25%;
+          width: 37%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -59,7 +59,7 @@
         "
       >
         <option value="" selected hidden disabled>
-          Rank on Itinerary (1-5)
+          Rank on Itinerary
         </option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -73,7 +73,7 @@
         placeholder="Description"
         style="
           background-color: #f2e8cf;
-          width: 25%;
+          width: 37%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -82,9 +82,8 @@
       />
       <br /><br />
       <i style="font-family: Bookman Old Style">Image of Location:</i>
-      <label class="custom-file-upload">
-        <b-form-file v-model="imgfiles" />
-      </label>
+      <br />
+          <b-form-file style="width: 50%" placeholder="Choose a file" class="text-left" v-model="imgfiles"/>
     </div>
 
     <div class="buttonHolder">
@@ -188,12 +187,6 @@ fetchOnServer: false,
 input[type="file"] {
   display: none;
 }
-.imageFile {
-  border: 1px solid black;
-  display: inline-block;
-  padding: 6px 12px;
-  cursor: pointer;
-}
 input[type="button"] {
   background-color: #a7c957;
   border: none;
@@ -208,10 +201,6 @@ input[type="button"] {
 }
 body {
   background-color: #fcf6e7;
-}
-
-.icons {
-  text-align: center;
 }
 
 .locations {

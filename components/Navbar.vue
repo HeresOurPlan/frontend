@@ -29,22 +29,13 @@
           <b-dropdown-item href="/map">Map</b-dropdown-item>
         </b-nav-item-dropdown>
 
-        <!-- <b-nav-item-dropdown right> 
-          <template #button-content>
-            <em><div class = "circle"></div><div class="profileCircle"></div></em>
-          </template>
-          <b-dropdown-item href="#">Profile</b-dropdown-item>
-          <b-dropdown-item href="#">Sign Out</b-dropdown-item>
-        </b-nav-item-dropdown> -->
+        <b-nav-item href="#" class = "profileCircle">
+          <b-nav-item-dropdown class="m-md-2" no-caret>
+            <b-dropdown-item href="/profileEdit">Edit Profile</b-dropdown-item>
+            <b-dropdown-item href="/logout">Log Out</b-dropdown-item>
+          </b-nav-item-dropdown>
+        </b-nav-item>
 
-          <!-- <b-navbar-nav> -->
-            <b-nav-item href="#" class = "profileCircle">
-              <b-nav-item-dropdown class="m-md-2" no-caret>
-                <b-dropdown-item href="/profileEdit"><b>Edit Profile</b></b-dropdown-item>
-                <b-dropdown-item href="/logout"><b>Log Out</b></b-dropdown-item>
-              </b-nav-item-dropdown>
-            </b-nav-item>
-          <!-- </b-navbar-nav> -->
       </b-navbar-nav>
     </b-collapse>
   </b-navbar>
@@ -68,6 +59,9 @@ export default {
             return decoded_token["user"]
           }
         }
+      },
+      doSomething(){
+        console.log('shown');
       }
     }
 }
