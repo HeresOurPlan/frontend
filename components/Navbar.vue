@@ -12,7 +12,7 @@
 
       <!-- Right aligned nav items -->
       <b-navbar-nav class="ml-auto">
-        <b-nav-item href="/main">{{ getCurrentUserName() }}</b-nav-item>
+        <b-nav-item href="/profilePage">{{ getCurrentUserName() }}</b-nav-item>
 
         <b-nav-form>
           <b-col>
@@ -27,6 +27,7 @@
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
           <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
           <b-dropdown-item href="/map">Map</b-dropdown-item>
+          <b-dropdown-item href="/logout"><b>Log Out?</b></b-dropdown-item>
         </b-nav-item-dropdown>
 
         <!-- <b-nav-item-dropdown right> 

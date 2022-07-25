@@ -121,6 +121,7 @@ export default {
       fetched: false
     }
   },
+
   fetchOnServer: false,
   async fetch() {
     this.fetched = await this.$axios.$get("http://localhost:8080/user");
