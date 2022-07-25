@@ -1,20 +1,10 @@
 <template>
   <div>
     <Navbar />
-    <h1
-      style="
-        color: #bc4749;
-        font-family: merriweather;
-        font-size: 50px;
-        padding-top: 20px;
-        padding-left: 2%;
-        text-align: center;
-      "
-    >
-      <strong>
-        <i> Add Your Activity </i>
-      </strong>
-    </h1>
+
+    <div class='myheading'>
+        <b><i> Add Your Activity </i></b>
+      </div><br>
 
     <div class="addItineraryDetails">
       <input
@@ -91,7 +81,7 @@
         "
       />
       <br /><br />
-      <i style="font-family: merriweather">Location of Image:</i>
+      <i style="font-family: merriweather">Image of Location:</i>
       <label class="custom-file-upload">
         <b-form-file v-model="imgfiles" />
       </label>
@@ -127,6 +117,8 @@ export default Vue.extend({
       imgfiles: [],
     };
   },
+
+fetchOnServer: false,
 
   async fetch() {
     this.indivactivity = await this.$axios.$get(
@@ -242,4 +234,13 @@ body {
   width: 100px;
   height: 100px;
 }
+
+.myheading {
+        color: #bc4749;
+        font-family: Bookman Old Style;
+        font-size: 50px;
+        padding-top: 20px;
+        text-align: center;
+}
+
 </style>
