@@ -27,7 +27,6 @@
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
           <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
           <b-dropdown-item href="/map">Map</b-dropdown-item>
-          <b-dropdown-item href="/logout"><b>Log Out?</b></b-dropdown-item>
         </b-nav-item-dropdown>
 
         <!-- <b-nav-item-dropdown right> 
@@ -39,7 +38,12 @@
         </b-nav-item-dropdown> -->
 
           <!-- <b-navbar-nav> -->
-            <b-nav-item href="#" class = "profileCircle"></b-nav-item>
+            <b-nav-item href="#" class = "profileCircle">
+              <b-nav-item-dropdown class="m-md-2" no-caret>
+                <b-dropdown-item href="/profileEdit"><b>Edit Profile</b></b-dropdown-item>
+                <b-dropdown-item href="/logout"><b>Log Out</b></b-dropdown-item>
+              </b-nav-item-dropdown>
+            </b-nav-item>
           <!-- </b-navbar-nav> -->
       </b-navbar-nav>
     </b-collapse>
