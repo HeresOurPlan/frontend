@@ -1,7 +1,7 @@
 <template>
     <div>
     <Navbar />
-    <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
+    <h1 style="color: #BC4749; font-family: Bookman Old Style; font-size: 30px;
     padding-top: 20px; ">Double click to select
     </h1>
   <l-map style="height: 300px" :zoom="zoom" :center="center" @dblclick="onMapClick">

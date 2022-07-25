@@ -81,7 +81,7 @@
         "
       />
       <br /><br />
-      <i style="font-family: merriweather">Image of Location:</i>
+      <i style="font-family: Bookman Old Style">Image of Location:</i>
       <label class="custom-file-upload">
         <b-form-file v-model="imgfiles" />
       </label>

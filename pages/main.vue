@@ -1,7 +1,8 @@
 <template>
     <div>
     <Navbar />
-    <h1 style="color: #BC4749; font-family: merriweather; font-size: 31px; 
+    <br>
+    <h1 style="color: #BC4749; font-family: Bookman Old Style; font-size: 31px; 
     padding-top: 1%; padding-left: 12%; ">
       <strong>
       <i>
@@ -13,30 +14,26 @@
     <b-container>
         <div class="row-fluid scrollable" style="height:250px">
             <div style="display:inline" v-for="imgUrl in images" :key="imgUrl">
-                <img class="square" :src="imgUrl">
+                <a href='' onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal" ><img class="square" :src="imgUrl"></a>  
+                
             </div>
         </div>
 
-            <!--
-            <a href="https://www.example.com" onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal" >example</a>  
-<a href="https://www.bing.com"    onclick="document.getElementById('modal1').style.display='block'" target="iframe_modal">bing</a>
-
-<div id="modal1" class="modal">
-  <span onclick="document.getElementById('modal1').style.display='none'; document.getElementById('iframe1').src =''" class="">&times;</span>
-  <iframe id="iframe1" height="300px" width="100%" src="" name="iframe_modal"></iframe>
-  </div>
-  -->
+        <div id="modal1" class="modal">
+            <span onclick="document.getElementById('modal1').style.display='none'; document.getElementById('iframe1').src =''" class="">&times;</span>
+            <iframe id="iframe1" height="300px" width="100%" src="" name="iframe_modal"></iframe>
+        </div>
 
     </b-container>
     
-    <br/><br/><br/><br/>
+    <br/><br/>
 
     <div class = "icons">
         <a href ="/map"><i class="fa-solid fa-location-dot fa-3x" style="color:black;"></i></a>
-        <br/><br/><br/><br/><br/><br/> 
+        <br/><br/><br/><br/><br/>
         <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
-
+    <br/><br/><br/><br/>    <br/>
     </div>
 </template>
 
@@ -83,15 +80,15 @@ export default {
     }
 
     .modal {
-        z-index:3;
-        display:none;
-        padding-top:50px;
+        padding-top: 20%;
+        padding-bottom: 30%;
+        padding-left: 20%;
+        padding-right: 20%;
         position:fixed;
-        left:0;
-        top:0;
-        width:30%;
-        height:30%;
+        width:80%;
+        height:50%;
         overflow:scroll;
+        white-space: nowrap;
         background-color:rgb(0,0,0);
         background-color:rgba(0,0,0,0.4)
     }

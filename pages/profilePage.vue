@@ -6,7 +6,7 @@
             <b-row align-h="center">
                 <b-col cols="6">
                     <h1 style="color:#BC4749;
-                               font-family:merriweather;
+                               font-family:Bookman Old Style;
                                font-size: 70px;
                                padding-right: 50px;
                                text-align: left;

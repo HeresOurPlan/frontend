@@ -1,11 +1,11 @@
 <template>
 <!-- click radio twice to zoom in to specific location -->
-  <div>
+  <div style="background-color:#FCF6E7">
     <Navbar />
-    <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
+    <h1 style="color: #BC4749; font-family: Bookman Old Style; font-size: 30px;
     padding-top: 20px; padding-left: 175px; ">
     </h1>
-    <div class="mt-3"><strong>Activities in your Itinerary: </strong></div><br/>
+    <div class="mt-3""><strong>Activities in your Itinerary: </strong></div><br/>
     <b-select 
       v-model="location"
       :options = "indivactivity"
@@ -48,7 +48,7 @@
         <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
 
-
+  <br/><br/><br/><br/>    <br/>
 
   </div>
 </template>

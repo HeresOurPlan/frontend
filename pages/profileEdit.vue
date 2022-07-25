@@ -1,14 +1,14 @@
 <template>
     <div>
         <Navbar />
-            <h1 style="color: #BC4749; font-family: merriweather; font-size: 30px;
+            <h1 style="color: #BC4749; font-family: merriwBookman Old Styleeather; font-size: 30px;
             padding-top: 20px; padding-left: 175px; ">
             </h1>
                 <b-container fluid>
             <b-row align-h="center" align-v="center" style="height:100%">
                 <b-col>
                     <h1 style="color:#BC4749;
-                        font-family:merriweather;
+                        font-family:Bookman Old Style;
                         font-size: 45px;
                         padding-top: 3%;
                         text-align: right;
