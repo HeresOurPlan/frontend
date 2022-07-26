@@ -1,89 +1,101 @@
 <template>
     <div>
         <Navbar />
-
-        <b-container fluid style="padding-top:30px;height:150px;padding-bottom:50px">
-            <b-row align-h="center">
-                <b-col cols="6">
-                    <h1 style="color:#BC4749;
-                               font-family:Bookman Old Style;
-                               font-size: 70px;
-                               padding-right: 50px;
-                               text-align: left;
-                               font-style: italic;
-                               font-weight: bold;
-                               text-align: right">
+            <h1 style="color: #BC4749; font-family: Bookman Old Style; font-size: 30px;
+            padding-top: 20px; padding-left: 175px; ">
+            </h1>
+                <b-container fluid>
+            <b-row align-h="center" align-v="center" style="height:100%">
+                <b-col>
+                    <div class='name'>
                         (Name)
-                    </h1>
+                    </div>
                 </b-col>
-                <b-col cols="4">
-                    <div class="profileCircle" style="transform: translateX(50%);"></div>
+                <b-col>
+                    <div class="profileCircle" style="transform: translateX(25%) translateY(5%)"></div>
                 </b-col>
                 </b-row>
         </b-container>
 
         
-        <b-container fluid style="padding-bottom:90px;">
+        <b-container fluid style="padding:22.5px;">
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     Username:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    Username
+                  </div>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     Password:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    Password
+                  </div>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     Name:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    Name
+                  </div>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     Gender:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    Gender
+                  </div>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     DoB:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    DoB
+                  </div>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     Email:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    Email
+                  </div>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
-                <b-col style="text-align:right;font-family: Georgia;font-style:italic;font-weight:bold">
-                    Contact Num:
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Contact Number:
                 </b-col>
-                <b-col>
+                <b-col class="col-lg-4">
+                  <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
+                    Contact Number
+                  </div>
                 </b-col> 
             </b-row>
-              <!-- placeholder in input should be current values in DB -->
-              <!-- cannot Align the input names in one column -->
-              
 
-            <br><br>
+            <br>
             <div class="buttonHolder">
                 <router-link to ="/profileEdit">
                 <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="submitForm">
                 </router-link>
             </div>
-            <!-- cannot get edit text to change to white. -->
         </b-container>
     </div>
 
@@ -131,10 +143,6 @@ export default {
 
 .profileCircle{
         position: relative;
-        /* top: 100%;
-        left: 100%; */
-        /* margin-top:-40px;
-        margin-left:-60px; */
         width: 90px;
         height: 90px;
         -webkit-border-radius: 45px;
@@ -142,6 +150,16 @@ export default {
         border-radius: 45px;
         background: black;
         transform: translateX(-20px);
+}
+
+.name{
+    color:#BC4749;
+    font-family:Bookman Old Style;
+    font-size: 45px;
+    padding-top: 3%;
+    text-align: right;
+    font-style: italic;
+    font-weight: bold;
 }
 </style>
 
