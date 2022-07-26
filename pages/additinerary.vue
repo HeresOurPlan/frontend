@@ -47,19 +47,6 @@
       />
       <br /><br />
       <input
-        v-model="locationCoord"
-        placeholder="Coordinates"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
         v-model="opening_hours"
         placeholder="Opening Hours (e.g. 2359)"
         style="
@@ -195,7 +182,6 @@ export default Vue.extend({
       indivactivity: [],
       activityName: "",
       address: "",
-      locationCoord: "",
       itineraryRank: "",
       website: "",
       closing_hours: "",
@@ -210,11 +196,15 @@ export default Vue.extend({
 
 fetchOnServer: false,
 
-  async fetch() {
+  async mounted() {
     this.indivactivity = await this.$axios.$get(
       "http://localhost:8080/activities"
     );
     console.log(this.indivactivity);
+    if (sessionStorage.getItem('address') !== null) {
+      this.address = sessionStorage.getItem('address')
+      sessionStorage.removeItem('address')
+    }
   },
 
   components: { Navbar },
@@ -222,7 +212,6 @@ fetchOnServer: false,
     async submitForm() {
       console.log(this.activityName);
       console.log(this.address);
-      console.log(this.locationCoord);
       console.log(this.itineraryRank);
       console.log(this.website);
       console.log(this.category);
@@ -240,15 +229,9 @@ fetchOnServer: false,
       // formData.append("rank", this.itineraryRank)
       // formData.append("description", this.description)
       // formData.append("imgfiles", this.imgfiles)
-      const new_useractivity = await this.$axios.$post(
-        `http://localhost:8080//useractivities`,
-        {
-          username: username,
-          itineraryRank: this.itineraryRank,
-        }
-      );
+      
       const new_activity = await this.$axios.$post(
-        `http://localhost:8080//activity`,
+        `http://localhost:8080/activity`,
         {
           activity_name: this.activityName,
           postal: this.postal,
@@ -263,6 +246,15 @@ fetchOnServer: false,
 
         }
       );
+      const new_useractivity = await this.$axios.$post(
+        `http://localhost:8080/useractivities`,
+        {
+          username: username,
+          activity: new_activity.id,
+          itineraryRank: this.itineraryRank,
+        }
+      );
+
     },
     getCurrentUserName() {
         if (process.browser) {

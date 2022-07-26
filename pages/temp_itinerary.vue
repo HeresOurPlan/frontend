@@ -12,7 +12,7 @@
 
     <b-container fluid>
         <div class="row-fluid scrollable" style="width:100%; height:100%">
-            <div class="locations" v-for="(activity,index) in activities" :key="activities">
+            <div class="locations" v-for="(activity,index) in activities" :key="activity">
                 <summary>
                     <!-- &emsp;<img class="square" :src="shop.image">&ensp; -->
                 <span>
@@ -26,26 +26,28 @@
                     <b>Opening/Closing Hours:</b> {{activity.opening_hours}}-{{activity.closing_hours}}<br>
                 </div>
                 <div class="activityButton">
-                    <b-button v-b-modal.modal-1 no-close-on-backdrop ok-only>
+                    <b-button v-b-modal.modal-1>
                         Complete Activity
                     </b-button>
-                    <b-modal id="modal-1" title="Activity Complete">
-                        <b-form-rating v-model="value"></b-form-rating>
-                        <p class="mt-2">Value: {{ value }}</p>
-                        <br />
-                        <input type="text" value="Feedback on Activity..."/>
-                    </b-modal>
 
-                    <b-button v-b-modal.modal-1 no-close-on-backdrop ok-only>
+                    <b-button v-b-modal.modal-2>
                         Delete Activity
                     </b-button>
-                    <b-modal id="modal-1" title="Deleting Activity">
-                        <b-form-rating v-model="value"></b-form-rating>
-                        <p class="mt-2">Value: {{ value }}</p>
-                        <input type="text" value="Feedback on Activity..."/>
-                    </b-modal>
+
                 </div>
             </div>
+            <b-modal id="modal-1" title="Activity Complete">
+                <b-form-rating v-model="value"></b-form-rating>
+                <p class="mt-2">Value: {{ value }}</p>
+                <br />
+                <input type="text" value="Feedback on Activity..."/>
+            </b-modal>
+            <b-modal id="modal-2" title="Deleting Activity">
+                <b-form-rating v-model="value"></b-form-rating>
+                <p class="mt-2">Value: {{ value }}</p>
+                <input type="text" value="Feedback on Activity..."/>
+            </b-modal>
+
 
         </div>
     </b-container>
@@ -68,27 +70,16 @@
 
     export default {
     
-    data() {
-      return {
-        value: null
-        }
-    },
-
     async fetch() {
-    this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
-    var result = [];
-
-    for(var i in this.indivactivity)
-        result.push([this.indivactivity [i]]);
-    
-    this.indivactivity = result
-    console.log(this.indivactivity)
+    this.activities = await this.$axios.$get("http://localhost:8080/activities");
+    console.log(this.activities)
     },
         
     name: 'Itinerary',
     data() {
         return {
-        activities: this.indivactivity
+        activities: [],
+        value: null
         // shops: [
         //     {
         //         "image": "https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80",

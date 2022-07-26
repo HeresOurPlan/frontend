@@ -11,7 +11,7 @@
     </h1>
 
     <b-container-fluid>
-        <div class="row-fluid scrollable" style="width:100%; height:100%" @click="test">
+        <div class="row-fluid scrollable" style="width:100%; height:100%">
             <details class="locations" v-for="(shop,index) in shops" :key="shop">
                 <summary>&emsp;<img class="square" :src="shop.image">&ensp;
                 <span>

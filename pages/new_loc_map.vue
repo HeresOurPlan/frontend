@@ -32,10 +32,8 @@
   </l-map>
   <br>
     <div class="col-md-12 text-center">
-      <b-btn class="btn btn-danger" @click="storingcoords" align="center">
-            <a href="additinerary.vue" name="addedActivity" style="color: white; font-weight: bold;">
-              Add This Activity!
-            </a>
+      <b-btn class="btn btn-danger" @click="storingcoords" style="color: white; font-weight: bold;">
+          Add This Activity!
       </b-btn>
     </div>
   </div>
@@ -107,7 +105,9 @@ export default {
         console.error("Reverse Geocode Error->", e);
       }
       this.loading = false;
+      this.address = address;
       return address;
+      
     },
     onMapClick(value) {
       // place the marker on the clicked spot
@@ -125,15 +125,10 @@ export default {
         });
       }
     },
-    // storingcoords() {
-    //   if (this.onMapClick != ""):
-    //     to_store = this.onMapClick;
-    //     console.log(to_store);
-    //     this.$session.set("addActivity", to_store);
-    //   else:
-    //     return "Click on a location!";
-    // }
-
+    storingcoords() {
+      sessionStorage.setItem('address',this.address)
+      this.$nuxt.$router.push('/additinerary')
+    }
   }
 };
 </script>
