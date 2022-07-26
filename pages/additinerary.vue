@@ -3,169 +3,136 @@
     <Navbar />
 
     <div class='myheading'>
-        <b><i> Add Your Activity </i></b>
+        <b><i>Add Your Activity</i></b>
       </div><br>
 
     <div class="addItineraryDetails">
-      <input
-        v-model="activityName"
-        placeholder="Name of Activity"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
-        v-model="address"
-        placeholder="Address"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
-        v-model="postal"
-        placeholder="Postal Code"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
-        v-model="opening_hours"
-        placeholder="Opening Hours (e.g. 2359)"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
-        v-model="closing_hours"
-        placeholder="Closing Hours (e.g. 2359)"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <select
-        v-model="prior_booking"
-        placeholder="Prior Booking"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      >
-        <option value="" selected hidden disabled>
-          Prior Booking
-        </option>
-        <option value="Yes">Yes</option>
-        <option value="No">No</option>
-      </select>
-      <br /><br />
-      <select
-        v-model="itineraryRank"
-        placeholder="Rank on Itinerary (1-5)"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      >
-        <option value="" selected hidden disabled>
-          Rank on Itinerary (1-5)
-        </option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-      </select>
-      <br /><br />
-      <input
-        v-model="category"
-        placeholder="Category"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
-        v-model="website"
-        placeholder="Website"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <input
-        v-model="price_point"
-        placeholder="Price Point"
-        style="
-          background-color: #f2e8cf;
-          width: 25%;
-          color: black;
-          border: 5px solid #f2e8cf;
-          border-radius: 10px;
-          box-sizing: border-box;
-        "
-      />
-      <br /><br />
-      <i style="font-family: Bookman Old Style">Image of Location:</i>
-      <br />
-          <b-form-file style="width: 50%" placeholder="Choose a file" class="text-left" v-model="imgfiles"/>
-      </label>
-    </div>
+        <b-container fluid style="padding:10px;">
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Activity Name:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="activityName" type="text" placeholder="Activity Name" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Address:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="address" type="text" placeholder="Address" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Postal Code:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="postal" type="text" placeholder="Postal Code" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Opening Hours (e.g. 0000):
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="opening_hours" type="text" placeholder="Opening Hours" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Closing Hours (e.g. 2359):
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="closing_hours" type="text" placeholder="Closing Hours" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Prior Booking Needed?
+                </b-col>
+                <b-col class="col-lg-4">
+                  <select v-model="prior_booking" type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                  <option value="" selected hidden disabled>Prior Booking Needed?</option>
+                  <option value="Yes">Yes</option>
+                  <option value="No">No</option>
+                  </select>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Rank on Itinerary:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <select v-model="itineraryRank" type="text" placeholder="Contact Number" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                    <option value="" selected hidden disabled>Rank on Itinerary (1-5)</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                  </select>
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Category:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="category" type="text" placeholder="Category" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Website URL:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="website" type="text" placeholder="Website URL" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Price Point:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <input v-model="price_point" type="text" placeholder="Price Point" style = "background-color: #F2E8CF; width: 75%;
+                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                </b-col> 
+            </b-row>
+            <b-row style="padding-bottom:10px">
+                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
+                    Location of Image:
+                </b-col>
+                <b-col class="col-lg-4">
+                  <b-form-file style="width: 75%;text-align:left" placeholder="Choose a file" v-model="imgfiles"/>
+                  <br><br>
+                </b-col> 
+            </b-row>
+          <b-row><b-col class="col-lg-12">
+          <div class="buttonHolder">
+            <input
+              type="button"
+              value="Add"
+              style="color: black; font-weight: bold"
+              @click="submitForm"
+            />
+          </div>
+          </b-col></b-row>
+        </b-container>
+        
+<b-container-fluid></b-container-fluid>
 
-    <div class="buttonHolder">
-      <input
-        type="button"
-        value="Add"
-        style="color: black; font-weight: bold"
-        @click="submitForm"
-      />
-    </div>
+  </div><br><br><br><br>
   </div>
 </template>
 
