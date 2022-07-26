@@ -15,15 +15,12 @@
             <details class="locations" v-for="(shop,index) in shops" :key="shop">
                 <summary>&emsp;<img class="square" :src="shop.image">&ensp;
                 <span>
-                <!-- style="height:100px" -->
-                <b>{{index+1}}. {{ shop.text }}</b>
-                <!-- @
-                <i>{{shop.location}}, S({{shop.postal}})</i> --></span>
+                <b>{{index+1}}. {{ shop.text }}</b> @ 
+                <i>{{shop.location}}, S({{shop.postal}})</i></span>
                 </summary>
                 <div class="information">
-                    <b>Location:</b> {{shop.location}}, S({{shop.postal}})<br>
                     <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
-                </div>
+                </div><br>
                 <div class="activityButton">
                     <b-button v-b-modal.modal-1>
                         Complete Activity
