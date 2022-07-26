@@ -25,26 +25,29 @@
                     <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
                 </div>
                 <div class="activityButton">
-                    <b-button v-b-modal.modal-1 no-close-on-backdrop ok-only>
+                    <b-button v-b-modal.modal-1>
                         Complete Activity
                     </b-button>
-                    <b-modal id="modal-1" title="Activity Complete">
-                        <b-form-rating v-model="value"></b-form-rating>
-                        <p class="mt-2">Value: {{ value }}</p>
-                        <br />
-                        <input type="text" value="Feedback on Activity..."/>
-                    </b-modal>
 
-                    <b-button v-b-modal.modal-1 no-close-on-backdrop ok-only>
+                    <b-button v-b-modal.modal-2>
                         Delete Activity
                     </b-button>
-                    <b-modal id="modal-1" title="Deleting Activity">
-                        <b-form-rating v-model="value"></b-form-rating>
-                        <p class="mt-2">Value: {{ value }}</p>
-                        <input type="text" value="Feedback on Activity..."/>
-                    </b-modal>
                 </div>
             </details>
+            <b-modal id="modal-1" title="Activity Complete">
+                <b-form-rating v-model="value"></b-form-rating>
+                <br />
+                Feedback:
+                <br />
+                <input type="text" placeholder="Feedback on Activity..."/>
+            </b-modal>
+            <b-modal id="modal-2" title="Deleting Activity">
+                <b-form-rating v-model="value"></b-form-rating>
+                <br />
+                Feedback:
+                <br />
+                <input type="text" placeholder="Feedback on Activity..."/>
+            </b-modal>
 
         </div>
     </b-container-fluid>
