@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h1 style="color:#BC4749; font-family:Bookman Old Style; font-size: 70px; padding-left: 50px; text-align: center">
-      <strong>
-      <i>
+    <div class="HOP">
         Here's<br>
         Our<br>
         Plan<br>
-      </i>
-      </strong>
-    </h1>
+    </div>
   
     <div class="loginDetails">
         <input type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
@@ -39,21 +35,39 @@ export default {
 
 
 <style>
-  body{
+  body {
     background-color: #FCF6E7;
-  }
+    }
+
   input[type=button] {
-  background-color: #A7C957;
-  border: none;
-  color: white;
-  padding: 5px 100px;
-  text-decoration: none;
-  margin: 2px 1px;
-  cursor: pointer;
-  border-radius: 15px;
-  font-style: italic;
-  text-align: center; 
-  }
-  .loginDetails{ text-align: center; }
-  .buttonHolder{ text-align: center; }
+    background-color: #A7C957;
+    border: none;
+    color: white;
+    padding: 5px 100px;
+    text-decoration: none;
+    margin: 2px 1px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-style: italic;
+    text-align: center; 
+    }
+
+  .loginDetails {
+    text-align: center;
+    }
+
+  .buttonHolder {
+    text-align: center;
+    }
+
+  .HOP {
+    color:#BC4749;
+    font-family:Bookman Old Style;
+    font-size: 70px;
+    padding: 50px;
+    line-height:80px;
+    text-align: center;
+    font-style:italic;
+    font-weight:bold;
+    }
 </style>

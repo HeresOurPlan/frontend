@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h1 style="color:#BC4749; font-family:Bookman Old Style; font-size: 70px; padding-left: 50px; text-align: center">
-      <strong>
-      <i>
+      <div class="HOP">
         Here's<br>
         Our<br>
         Plan<br>
-      </i>
-      </strong>
-    </h1>
+      </div>
   
       <div class="loginDetails">
           <input v-model="username" type="text" placeholder="Username" style = "background-color: #F2E8CF; width: 25%;
@@ -33,7 +29,13 @@
 
     <router-link to ="/forgotpassword">
         <p align='center' style="color: black;"><i><u>Forgot your password?</u></i></p>
+    </router-link><br>
+
+    <h6 align='center' style="color:#bc4749">New user?</h6>
+    <router-link to ="/registrationpage">
+        <p align='center' style="color: black;"><i><u>Register here</u></i></p>
     </router-link>
+
   </div>
   
 </template>
@@ -97,4 +99,16 @@ export default {
   }
   .loginDetails{ text-align: center; }
   .buttonHolder{ text-align: center; }
+
+  .HOP{
+  color:#BC4749;
+  font-family:Bookman Old Style;
+  font-size: 70px;
+  padding: 50px;
+  line-height:80px;
+  text-align: center;
+  font-style:italic;
+  font-weight:bold;
+}
+
 </style>

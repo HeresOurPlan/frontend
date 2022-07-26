@@ -1,14 +1,10 @@
 <template>
   <div>
-    <h1 style="color:#BC4749; font-family:Bookman Old Style; font-size: 70px; padding-left: 50px; text-align: center">
-      <strong>
-      <i>
+    <div class="HOP">
         Here's<br>
         Our<br>
         Plan<br>
-      </i>
-      </strong>
-    </h1>
+    </div>
 
     <div class="loginDetails">
       <input
@@ -135,20 +131,17 @@
       <input
         type="button"
         value="Sign up"
-        style="color: black; font-weight: bold"
+        style="color: white; font-weight: bold"
         @click="submitForm"
       />
     </div>
-    <br />
+    <br /><br>
+        <h6 align='center' style="color:#bc4749">Already a user?</h6>
+    <router-link to ="/login">
+        <p align='center' style="color: black;"><i><u>Log in here</u></i></p><br></br>
+    </router-link>
   </div>
 </template>
-
-
-<!-- <script>
-export default {
-  name: 'RegistrationPage',
-}
-</script> -->
 
 <script>
 export default {
@@ -244,5 +237,15 @@ input[type="button"] {
 .buttonHolder {
   color: #386641;
   text-align: center;
+}
+.HOP{
+  color:#BC4749;
+  font-family:Bookman Old Style;
+  font-size: 70px;
+  padding: 50px;
+  line-height:80px;
+  text-align: center;
+  font-style:italic;
+  font-weight:bold;
 }
 </style>

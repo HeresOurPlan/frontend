@@ -220,16 +220,7 @@ fetchOnServer: false,
       console.log(this.prior_booking)
       console.log(this.imgfiles);
       const username = this.getCurrentUserName();
-      // const formData = new FormData()
-      // formData.append("activityId", "1")
-      // formData.append("username", this.getCurrentUserName())
-      // formData.append("activityName", this.activityName)
-      // formData.append("address", this.address)
-      // formData.append("locationCoord", this.locationCoord)
-      // formData.append("rank", this.itineraryRank)
-      // formData.append("description", this.description)
-      // formData.append("imgfiles", this.imgfiles)
-      
+
       const new_activity = await this.$axios.$post(
         `http://localhost:8080/activity`,
         {
@@ -256,6 +247,7 @@ fetchOnServer: false,
       );
 
     },
+
     getCurrentUserName() {
         if (process.browser) {
           const token = localStorage.getItem("token")
