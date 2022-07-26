@@ -38,14 +38,17 @@
             </div>
             <b-modal id="modal-1" title="Activity Complete">
                 <b-form-rating v-model="value"></b-form-rating>
-                <p class="mt-2">Value: {{ value }}</p>
                 <br />
-                <input type="text" value="Feedback on Activity..."/>
+                Feedback:
+                <br />
+                <input type="text" placeholder="Feedback on Activity..."/>
             </b-modal>
             <b-modal id="modal-2" title="Deleting Activity">
                 <b-form-rating v-model="value"></b-form-rating>
-                <p class="mt-2">Value: {{ value }}</p>
-                <input type="text" value="Feedback on Activity..."/>
+                <br />
+                Feedback:
+                <br />
+                <input type="text" placeholder="Feedback on Activity..."/>
             </b-modal>
 
 
@@ -70,6 +73,8 @@
 
     export default {
     
+    fetchOnServer: false,
+
     async fetch() {
     this.activities = await this.$axios.$get("http://localhost:8080/activities");
     console.log(this.activities)
