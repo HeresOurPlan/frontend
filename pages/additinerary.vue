@@ -241,14 +241,15 @@ fetchOnServer: false,
       // formData.append("description", this.description)
       // formData.append("imgfiles", this.imgfiles)
       const new_useractivity = await this.$axios.$post(
-        `http://localhost:8080//useractivities`,
+        `http://localhost:8080/useractivities`,
         {
           username: username,
+          activity_id: activity_id,
           itineraryRank: this.itineraryRank,
         }
       );
       const new_activity = await this.$axios.$post(
-        `http://localhost:8080//activity`,
+        `http://localhost:8080/activity`,
         {
           activity_name: this.activityName,
           postal: this.postal,
