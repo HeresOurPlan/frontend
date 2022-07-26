@@ -12,7 +12,7 @@
         placeholder="Name of Activity"
         style="
           background-color: #f2e8cf;
-          width: 37%;
+          width: 25%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -25,7 +25,20 @@
         placeholder="Address"
         style="
           background-color: #f2e8cf;
-          width: 37%;
+          width: 25%;
+          color: black;
+          border: 5px solid #f2e8cf;
+          border-radius: 10px;
+          box-sizing: border-box;
+        "
+      />
+      <br /><br />
+      <input
+        v-model="postal"
+        placeholder="Postal Code"
+        style="
+          background-color: #f2e8cf;
+          width: 25%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -38,7 +51,33 @@
         placeholder="Coordinates"
         style="
           background-color: #f2e8cf;
-          width: 37%;
+          width: 25%;
+          color: black;
+          border: 5px solid #f2e8cf;
+          border-radius: 10px;
+          box-sizing: border-box;
+        "
+      />
+      <br /><br />
+      <input
+        v-model="opening_hours"
+        placeholder="Opening Hours (e.g. 2359)"
+        style="
+          background-color: #f2e8cf;
+          width: 25%;
+          color: black;
+          border: 5px solid #f2e8cf;
+          border-radius: 10px;
+          box-sizing: border-box;
+        "
+      />
+      <br /><br />
+      <input
+        v-model="closing_hours"
+        placeholder="Closing Hours (e.g. 2359)"
+        style="
+          background-color: #f2e8cf;
+          width: 25%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -47,11 +86,11 @@
       />
       <br /><br />
       <select
-        v-model="itineraryRank"
-        placeholder="Rank on Itinerary (1-5)"
+        v-model="prior_booking"
+        placeholder="Prior Booking"
         style="
           background-color: #f2e8cf;
-          width: 37%;
+          width: 25%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -59,7 +98,26 @@
         "
       >
         <option value="" selected hidden disabled>
-          Rank on Itinerary
+          Prior Booking
+        </option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+      <br /><br />
+      <select
+        v-model="itineraryRank"
+        placeholder="Rank on Itinerary (1-5)"
+        style="
+          background-color: #f2e8cf;
+          width: 25%;
+          color: black;
+          border: 5px solid #f2e8cf;
+          border-radius: 10px;
+          box-sizing: border-box;
+        "
+      >
+        <option value="" selected hidden disabled>
+          Rank on Itinerary (1-5)
         </option>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -69,11 +127,37 @@
       </select>
       <br /><br />
       <input
-        v-model="description"
-        placeholder="Description"
+        v-model="category"
+        placeholder="Category"
         style="
           background-color: #f2e8cf;
-          width: 37%;
+          width: 25%;
+          color: black;
+          border: 5px solid #f2e8cf;
+          border-radius: 10px;
+          box-sizing: border-box;
+        "
+      />
+      <br /><br />
+      <input
+        v-model="website"
+        placeholder="Website"
+        style="
+          background-color: #f2e8cf;
+          width: 25%;
+          color: black;
+          border: 5px solid #f2e8cf;
+          border-radius: 10px;
+          box-sizing: border-box;
+        "
+      />
+      <br /><br />
+      <input
+        v-model="price_point"
+        placeholder="Price Point"
+        style="
+          background-color: #f2e8cf;
+          width: 25%;
           color: black;
           border: 5px solid #f2e8cf;
           border-radius: 10px;
@@ -84,6 +168,7 @@
       <i style="font-family: Bookman Old Style">Image of Location:</i>
       <br />
           <b-form-file style="width: 50%" placeholder="Choose a file" class="text-left" v-model="imgfiles"/>
+      </label>
     </div>
 
     <div class="buttonHolder">
@@ -112,7 +197,13 @@ export default Vue.extend({
       address: "",
       locationCoord: "",
       itineraryRank: "",
-      description: "",
+      website: "",
+      closing_hours: "",
+      opening_hours: "",
+      price_point: "",
+      category: "",
+      postal:"",
+      prior_booking:"",
       imgfiles: [],
     };
   },
@@ -128,35 +219,48 @@ fetchOnServer: false,
 
   components: { Navbar },
   methods: {
-    async test() {
-      const result = await this.$axios.$post(
-        "http://localhost:8080/activities"
-      );
-      console.log(result["Test"]["category"]);
-    },
-
     async submitForm() {
-      console.log(this.username);
       console.log(this.activityName);
       console.log(this.address);
       console.log(this.locationCoord);
       console.log(this.itineraryRank);
-      console.log(this.description);
+      console.log(this.website);
+      console.log(this.category);
+      console.log(this.opening_hours);
+      console.log(this.closing_hours);
+      console.log(this.prior_booking)
       console.log(this.imgfiles);
-      const formData = new FormData()
-      formData.append("activityId", "1")
-      formData.append("username", this.getCurrentUserName())
-      formData.append("activityName", this.activityName)
-      formData.append("address", this.address)
-      formData.append("locationCoord", this.locationCoord)
-      formData.append("rank", this.itineraryRank)
-      formData.append("description", this.description)
-      formData.append("imgfiles", this.imgfiles)
-      const result = await this.$axios.$post(
-        "http://localhost:8080/addactivity/image",
-        formData,
+      const username = this.getCurrentUserName();
+      // const formData = new FormData()
+      // formData.append("activityId", "1")
+      // formData.append("username", this.getCurrentUserName())
+      // formData.append("activityName", this.activityName)
+      // formData.append("address", this.address)
+      // formData.append("locationCoord", this.locationCoord)
+      // formData.append("rank", this.itineraryRank)
+      // formData.append("description", this.description)
+      // formData.append("imgfiles", this.imgfiles)
+      const new_useractivity = await this.$axios.$post(
+        `http://localhost:8080//useractivities`,
         {
-            "Content-Type": "multipart/form-data"
+          username: username,
+          itineraryRank: this.itineraryRank,
+        }
+      );
+      const new_activity = await this.$axios.$post(
+        `http://localhost:8080//activity`,
+        {
+          activity_name: this.activityName,
+          postal: this.postal,
+          closing_hours: this.closing_hours,
+          address: this.address,
+          locationCoord: this.locationCoord,
+          opening_hours: this.opening_hours,
+          prior_booking: this.prior_booking,
+          price_point: this.price_point,
+          website: this.website,
+          category: this.category,
+
         }
       );
     },
@@ -187,6 +291,12 @@ fetchOnServer: false,
 input[type="file"] {
   display: none;
 }
+.imageFile {
+  border: 1px solid black;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
 input[type="button"] {
   background-color: #a7c957;
   border: none;
@@ -201,6 +311,10 @@ input[type="button"] {
 }
 body {
   background-color: #fcf6e7;
+}
+
+.icons {
+  text-align: center;
 }
 
 .locations {
