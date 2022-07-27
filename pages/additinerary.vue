@@ -80,8 +80,15 @@
                     Category:
                 </b-col>
                 <b-col class="col-lg-4">
-                  <input v-model="category" type="text" placeholder="Category" style = "background-color: #F2E8CF; width: 75%;
+                  <select v-model="category" type="text" placeholder="Category" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
+                    <option value="" selected hidden disabled>Category</option>
+                    <option value="F&B">F&B</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Cultural">Cultural</option>
+                    <option value="Others">Others</option>
+                  </select>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
