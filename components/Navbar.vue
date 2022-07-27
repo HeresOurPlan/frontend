@@ -17,8 +17,9 @@
         <b-nav-form>
           <b-row>
           <b-col>
-          <b-form-input size="sm" class="mr-sm-2" placeholder="Search Locations"></b-form-input><b-button size="sm" class="my-2 my-sm-0" type="submit" href="/new_loc_map">Search</b-button>
+            <b-form-input size="sm" class="mr-sm-2" placeholder="Search Locations"></b-form-input>
           </b-col>
+            <b-button size="sm" class="my-2 my-sm-0" type="submit" href="/new_loc_map">Search</b-button>
           </b-row>
         </b-nav-form>
 
