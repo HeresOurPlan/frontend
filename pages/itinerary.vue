@@ -22,7 +22,7 @@
                 <i>{{shop.location}}, S({{shop.postal}})</i> --></span>
                 </summary>
                 <div class="information">
-                    <b>Location:</b> {{activity.location}}<br>
+                    <b>Location:</b> {{activity.address}}<br>
                     <b>Opening/Closing Hours:</b> {{activity.opening_hours}}-{{activity.closing_hours}}<br>
                 </div>
                 <br>
@@ -78,7 +78,13 @@
     fetchOnServer: false,
 
     async mounted() {
-    this.activities = await this.$axios.$get("http://localhost:8080/activities");
+    this.activities = await this.$axios.$get(
+        "http://localhost:8080/activities",
+        {
+        address: this.address,
+        opening_hours: this.opening_hours,
+        closing_hours: this.closing_hours
+        });
     console.log(this.activities)
     },
 
