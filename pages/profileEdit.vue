@@ -14,7 +14,12 @@
                 <b-col>
                     <label class="custom-file-upload">
                     <input type="file"/>
-                    <div class="profileCircle" style="transform: translateX(25%) translateY(5%);">
+                    
+                    <div class="profileCircle" 
+                      style="transform: translateX(25%) translateY(5%);">
+                    </div>
+                    <div class="profileCircle:hover">
+                      <i class="fas fa-camera"></i>
                     </div>
                     </label>
                 </b-col>
@@ -107,6 +112,10 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import Vue from 'vue'
+import VTooltip from 'v-tooltip'
+
+Vue.use(VTooltip)
 
 export default {
   components: { Navbar },
@@ -169,6 +178,17 @@ export default {
       transform: translateX(-20px);
       cursor:pointer;
     }
+  .profileCircle:hover{
+      position: relative;
+      width: 90px;
+      height: 90px;
+      -webkit-border-radius: 45px;
+      -moz-border-radius: 45px;
+      border-radius: 45px;
+      background: linear-gradient(to bottom, black 25%,#eae5e5 100%);
+      transform: translateX(-20px);
+      cursor:pointer;
+  }
 
 .name{
     color:#BC4749;
