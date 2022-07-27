@@ -22,19 +22,15 @@
             <b-button size="sm" class="my-2 my-sm-0" type="submit" href="/new_loc_map">Search</b-button>
           </b-row>
         </b-nav-form>
-
-        <b-nav-item-dropdown text="Where to?" class="ml-2">
+        <b-nav-item-dropdown text="Menu" class="ml-2">
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
           <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
           <b-dropdown-item href="/map">Map</b-dropdown-item>
+          <b-dropdown-item href="/profileEdit">Edit Profile</b-dropdown-item>
           <b-dropdown-item href="/login"><b>{{ logout() }}Log Out</b></b-dropdown-item>
         </b-nav-item-dropdown>
 
-        <b-nav-item href="#" class = "profileCircle">
-          <b-nav-item-dropdown class="m-md-2" no-caret right text>
-            <b-dropdown-item href="/profileEdit">Edit Profile</b-dropdown-item>
-            <b-dropdown-item href="/login">{{ logout() }}Log Out</b-dropdown-item>
-          </b-nav-item-dropdown>
+        <b-nav-item href="/profilePage" class = "profileCircle">
         </b-nav-item>
 
       </b-navbar-nav>
