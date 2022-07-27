@@ -71,15 +71,8 @@
                     Rank on Itinerary:
                 </b-col>
                 <b-col class="col-lg-4">
-                  <select v-model="itineraryRank" type="text" placeholder="Contact Number" style = "background-color: #F2E8CF; width: 75%;
+                  <input v-model="itineraryRank" type="number" placeholder="1-5" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                    <option value="" selected hidden disabled>Rank on Itinerary (1-5)</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                  </select>
                 </b-col> 
             </b-row>
             <b-row style="padding-bottom:10px">
