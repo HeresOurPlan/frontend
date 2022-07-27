@@ -99,8 +99,8 @@
 
             <br>
             <div class="buttonHolder">
-                <router-link to ="/profileEdit">
-                <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="submitForm">
+                <router-link to ="/profilePage">
+                <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="editProfile">
                 </router-link>
             </div>
         </b-container>
@@ -121,15 +121,64 @@ export default {
   components: { Navbar },
   data() {
     return {
-      fetched: false
+      fetched: false,
+      editing: false,
+      password: "",
+      name: "",
+      gender: "",
+      dob: "",
+      email: "",
+      contact: ""
     }
   },
 
   fetchOnServer: false,
   async fetch() {
-    this.fetched = await this.$axios.$get("http://localhost:8080/user");
-    console.log(this.fetched)
+      const username = this.getCurrentUserName();
+      this.fetched = await this.$axios.$get(
+        `http://localhost:8080/user/${username}`,
+        {
+          password: this.password,
+          name: this.name,
+          gender: this.gender,
+          dob: this.dob,
+          email: this.email,
+          contact: this.contact
+        }  
+      );
+      console.log(this.fetched)
     },
+    methods: {
+      getCurrentUserName() {
+          if (process.browser) {
+            const token = localStorage.getItem("token")
+            if (token === null) {
+              return "Guest"
+            } else {
+              const decoded_token = jwt_decode(token)
+              console.log(decoded_token)
+              return decoded_token["user"]
+            }
+          }
+        },
+
+      async editProfile() {
+        const username = this.getCurrentUserName();
+        this.editing = await this.$axios.$put(
+          `http://localhost:8080/profileEdit/${username}`,
+          {
+            password: this.password,
+            name: this.name,
+            gender: this.gender,
+            dob: this.dob,
+            email: this.email,
+            contact: this.contact
+          }
+        )
+      }
+
+    }
+
    }
 </script>
 

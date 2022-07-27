@@ -23,7 +23,7 @@
           </b-row>
         </b-nav-form>
 
-        <b-nav-item-dropdown text="Where to?" class="ml-2">
+        <b-nav-item-dropdown text="Menu" class="ml-2">
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
           <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
           <b-dropdown-item href="/map">Map</b-dropdown-item>

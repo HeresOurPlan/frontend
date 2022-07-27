@@ -28,14 +28,14 @@
     <l-map style="height: 300px" :zoom="zoom" :center="center">
       <l-tile-layer :url="url" :attribution="attribution">
       </l-tile-layer>
-      <l-marker v-for="item in activities" :key="item" :lat-lng="item.locationCoord">
+      <l-marker v-for="item in activities" :key="item" :lat="item.lat" :lng="item.lng">
           <!-- <l-popup>
             <div id='latlong'>
               {{ item.coord }}
             </div>
             <button @click="addlocation">Add in Itinerary</button>
           </l-popup> -->
-      <l-tooltip :content="item.name" :options="options">
+      <l-tooltip :content="item.activity_name" :options="options">
         <!-- <button @click="addlocation">Add in Itinerary</button> -->
       </l-tooltip>
       </l-marker>

@@ -138,7 +138,7 @@
     <br /><br>
         <h6 align='center' style="color:#bc4749">Already a user?</h6>
     <router-link to ="/login">
-        <p align='center' style="color: black;"><i><u>Log in here</u></i></p><br></br>
+        <p align='center' style="color: black;"><i><u>Log in here</u></i></p><br><br>
     </router-link>
   </div>
 </template>
