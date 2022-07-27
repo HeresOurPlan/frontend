@@ -37,7 +37,7 @@
             </b-row>
             <b-row style="padding-bottom:10px">
                 <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
-                    Opening Hours (e.g. 0000):
+                    Opening Hours (e.g. 00:00:00):
                 </b-col>
                 <b-col class="col-lg-4">
                   <input v-model="opening_hours" type="text" placeholder="Opening Hours" style = "background-color: #F2E8CF; width: 75%;
@@ -46,7 +46,7 @@
             </b-row>
             <b-row style="padding-bottom:10px">
                 <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
-                    Closing Hours (e.g. 2359):
+                    Closing Hours (e.g. 23:59:59):
                 </b-col>
                 <b-col class="col-lg-4">
                   <input v-model="closing_hours" type="text" placeholder="Closing Hours" style = "background-color: #F2E8CF; width: 75%;
@@ -61,8 +61,8 @@
                   <select v-model="prior_booking" type="text" placeholder="Email" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                   <option value="" selected hidden disabled>Prior Booking Needed?</option>
-                  <option value="Yes">Yes</option>
-                  <option value="No">No</option>
+                  <option value="Y">Yes</option>
+                  <option value="N">No</option>
                   </select>
                 </b-col> 
             </b-row>
@@ -113,12 +113,12 @@
             </b-row>
           <b-row><b-col class="col-lg-12">
           <div class="buttonHolder">
-            <input
+            <a href="/itinerary"><input
               type="button"
               value="Add"
               style="color: black; font-weight: bold"
               @click="submitForm"
-            />
+            /></a>
           </div>
           </b-col></b-row>
         </b-container>
