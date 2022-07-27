@@ -10,17 +10,21 @@
         </strong>
     </h1>
 
-    <b-container-fluid>
+    <b-container fluid>
         <div class="row-fluid scrollable" style="width:100%; height:100%">
-            <details class="locations" v-for="(shop,index) in shops" :key="shop">
-                <summary>&emsp;<img class="square" :src="shop.image">&ensp;
+            <div class="locations" v-for="(activity,index) in activities" :key="activity">
+                <summary>
+                    <!-- &emsp;<img class="square" :src="shop.image">&ensp; -->
                 <span>
-                <b>{{index+1}}. {{ shop.text }}</b> @ 
-                <i>{{shop.location}}, S({{shop.postal}})</i></span>
+                <!-- style="height:100px" -->
+                <b>{{index+1}}. {{ activity.activity_name }}</b>
+                <!-- @
+                <i>{{shop.location}}, S({{shop.postal}})</i> --></span>
                 </summary>
                 <div class="information">
-                    <b>Opening/Closing Hours:</b> {{shop.opening_hours}}-{{shop.closing_hours}}<br>
-                </div><br>
+                    <b>Location:</b> {{activity.location}}, S({{activity.postal}})<br>
+                    <b>Opening/Closing Hours:</b> {{activity.opening_hours}}-{{activity.closing_hours}}<br>
+                </div>
                 <div class="activityButton">
                     <b-button v-b-modal.modal-1>
                         Complete Activity
@@ -29,8 +33,9 @@
                     <b-button v-b-modal.modal-2>
                         Delete Activity
                     </b-button>
+
                 </div>
-            </details>
+            </div>
             <b-modal id="modal-1" title="Activity Complete">
                 <b-form-rating v-model="value"></b-form-rating>
                 <br />
@@ -46,14 +51,15 @@
                 <input type="text" placeholder="Feedback on Activity..."/>
             </b-modal>
 
+
         </div>
-    </b-container-fluid>
+    </b-container>
 
 
     <br/><br/><br/><br/>
 
     <div class = "icons">
-        <a href ="/new_loc_map"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
+        <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
 
     <br/><br/><br/><br/>    <br/>
@@ -67,81 +73,84 @@
 
     export default {
     
-    data() {
-      return {
-        value: null
-        }
+    fetchOnServer: false,
+
+    async fetch() {
+    this.activities = await this.$axios.$get("http://localhost:8080/activities");
+    console.log(this.activities)
     },
         
     name: 'Itinerary',
     data() {
         return {
-        shops: [
-            {
-                "image": "https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80",
-                "text":  "McDonald's",
-                "location": "100 Charming Avenue",
-                "postal":'888888',
-                "opening_hours":'10am',
-                "closing_hours":'5pm',
-                "category":'F&B'
-            },
-            {
-                "image": "https://static.mothership.sg/1/2021/07/mos-burger-closed.jpeg",
-                "text":  "Mos Burger",
-                "location": "100 Charming Avenue",
-                "postal":'888888',
-                "opening_hours":'10am',
-                "closing_hours":'5pm',
-                "category":'F&B'
-            },
-            {
-                "image": "https://cdn.britannica.com/08/193908-050-66767D57/view-Subway-restaurant-Bangkok-Thailand.jpg",
-                "text":  "Subway",
-                "location": "100 Charming Avenue",
-                "postal":'888888',
-                "opening_hours":'10am',
-                "closing_hours":'5pm',
-                "category":'F&B'
-            },
-            {
-                "image": "https://images.unsplash.com/photo-1532876688342-a79b7fa5c473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80",
-                "text":  "McDonald's",
-                "location": "100 Charming Avenue",
-                "postal":'888888',
-                "opening_hours":'10am',
-                "closing_hours":'5pm',
-                "category":'F&B'
-            },
-            {
-                "image": "https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
-                "text":  "Arcade",
-                "location": "100 Charming Avenue",
-                "postal":'888888',
-                "opening_hours":'10am',
-                "closing_hours":'5pm',
-                "category":'F&B'
-            },
-        ],
-        fetched: false,
-        indivactivity: []
+        activities: [],
+        value: null
+        // shops: [
+        //     {
+        //         "image": "https://images.unsplash.com/photo-1623156346149-d5cec8b29818?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1931&q=80",
+        //         "text":  "McDonald's",
+        //         "location": "100 Charming Avenue",
+        //         "postal":'888888',
+        //         "opening_hours":'10am',
+        //         "closing_hours":'5pm',
+        //         "category":'F&B'
+        //     },
+        //     {
+        //         "image": "https://static.mothership.sg/1/2021/07/mos-burger-closed.jpeg",
+        //         "text":  "Mos Burger",
+        //         "location": "100 Charming Avenue",
+        //         "postal":'888888',
+        //         "opening_hours":'10am',
+        //         "closing_hours":'5pm',
+        //         "category":'F&B'
+        //     },
+        //     {
+        //         "image": "https://cdn.britannica.com/08/193908-050-66767D57/view-Subway-restaurant-Bangkok-Thailand.jpg",
+        //         "text":  "Subway",
+        //         "location": "100 Charming Avenue",
+        //         "postal":'888888',
+        //         "opening_hours":'10am',
+        //         "closing_hours":'5pm',
+        //         "category":'F&B'
+        //     },
+        //     {
+        //         "image": "https://images.unsplash.com/photo-1532876688342-a79b7fa5c473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1113&q=80",
+        //         "text":  "McDonald's",
+        //         "location": "100 Charming Avenue",
+        //         "postal":'888888',
+        //         "opening_hours":'10am',
+        //         "closing_hours":'5pm',
+        //         "category":'F&B'
+        //     },
+        //     {
+        //         "image": "https://images.unsplash.com/photo-1511882150382-421056c89033?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1742&q=80",
+        //         "text":  "Arcade",
+        //         "location": "100 Charming Avenue",
+        //         "postal":'888888',
+        //         "opening_hours":'10am',
+        //         "closing_hours":'5pm',
+        //         "category":'F&B'
+        //     },
+        // ],
+        // fetched: false,
+        // indivactivity: []
         }
     },
 
-    fetchOnServer: false,
-    async fetch() {
-        this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
-        console.log(this.indivactivity)
-    },
+//     fetchOnServer: false,
+//     async fetch() {
+//         this.indivactivity = await this.$axios.$get("http://localhost:8080/activities");
+//         console.log(this.indivactivity)
+//     },
 
-    components: { Navbar },
-    methods: {
-    async test() {
-      const result = await this.$axios.$post("http://localhost:8080/activities")
-      console.log(result['Test']['category'])
+//     components: { Navbar },
+//     methods: {
+//     async test() {
+//       const result = await this.$axios.$post("http://localhost:8080/activities")
+//       console.log(result['Test']['category'])
 
-    }
-  }
+//     }
+//   }
 }
 
 
