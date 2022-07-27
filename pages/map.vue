@@ -35,7 +35,7 @@
             </div>
             <button @click="addlocation">Add in Itinerary</button>
           </l-popup> -->
-      <l-tooltip :content="item.address" :options="options">
+      <l-tooltip :content="item.name" :options="options">
         <!-- <button @click="addlocation">Add in Itinerary</button> -->
       </l-tooltip>
       </l-marker>
@@ -59,13 +59,13 @@ import Navbar from "@/components/Navbar.vue";
 export default {
   data() {
     return {
-      // location: "Botanic Gardens",
-      // url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-      // attribution:
-      //   '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
-      // zoom: 11,
-      // center: [1.3521, 103.8198],
-      // // Singapore LatLng
+      location: "Botanic Gardens",
+      url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+      attribution:
+        '&copy; <a target="_blank" href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      zoom: 11,
+      center: [1.3521, 103.8198],
+      // Singapore LatLng
       // indivactivity: this.indivactivity,
       // or is it indivactivity: []
       fetched: false,

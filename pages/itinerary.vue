@@ -71,6 +71,7 @@
 
 <script>
     import Navbar from "@/components/Navbar.vue";
+    import jwt_decode from "jwt-decode"
 
     export default {
     
@@ -80,6 +81,42 @@
     this.activities = await this.$axios.$get("http://localhost:8080/activities");
     console.log(this.activities)
     },
+
+    methods :{
+        async deleteActivity() {
+            const username = this.getCurrentUserName();
+            const delete_activity = this.$axios.$delete(
+                `http://localhost:8080/activity/${this.id}`
+            )
+        },
+        addReview() {
+            const username = this.getCurrentUserName();
+            const new_review = this.$axios.$post(
+                `http://localhost:8080/reviews/${username}/${this.id}`,
+                {
+                    username: username,
+                    activity: this.id,
+                    num_stars: this.num_stars,
+                    desc: this.desc
+                }
+            )
+        },
+        getCurrentUserName() {
+            if (process.browser) {
+                const token = localStorage.getItem("token")
+                if (token === null) {
+                    return "Guest"
+            } else {
+                const decoded_token = jwt_decode(token)
+                console.log(decoded_token)
+                return decoded_token["user"]
+            }
+            }
+        }
+
+
+    },
+
         
     name: 'Itinerary',
     data() {

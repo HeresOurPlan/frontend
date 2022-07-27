@@ -8,7 +8,7 @@
             <b-row align-h="center" align-v="center" style="height:100%">
                 <b-col>
                     <div class='name'>
-                        (Name)
+                        {{fetched.name}}
                     </div>
                 </b-col>
                 <b-col>
@@ -25,7 +25,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    Username
+                    {{fetched.username}}
                   </div>
                 </b-col> 
             </b-row>
@@ -35,7 +35,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    Password
+                    {{fetched.password}}
                   </div>
                 </b-col> 
             </b-row>
@@ -45,7 +45,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    Name
+                    {{fetched.name}}
                   </div>
                 </b-col> 
             </b-row>
@@ -55,7 +55,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    Gender
+                    {{fetched.gender}}
                   </div>
                 </b-col> 
             </b-row>
@@ -65,7 +65,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    DoB
+                    {{fetched.dob}}
                   </div>
                 </b-col> 
             </b-row>
@@ -75,7 +75,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    Email
+                    {{fetched.email}}
                   </div>
                 </b-col> 
             </b-row>
@@ -85,7 +85,7 @@
                 </b-col>
                 <b-col class="col-lg-4">
                   <div style = "background-color: #FCF6E7; width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;font-style:italic">
-                    Contact Number
+                    {{fetched.contact}}
                   </div>
                 </b-col> 
             </b-row>
@@ -104,22 +104,59 @@
 
 <script>
 import Navbar from "@/components/Navbar.vue";
+import jwt_decode from "jwt-decode"
 
 export default {
   components: { Navbar },
   data() {
     return {
       fetched: false,
-      sessionUser: this.user
+      sessionUser: this.user,
+      username: this.getCurrentUserName(),
+      password: "",
+      name: "",
+      gender: "",
+      dob: "",
+      email: "",
+      contact: "",
+      imgfiles: []
     }
   },
   fetchOnServer: false,
 
     async fetch() {
-    this.fetched = await this.$axios.$get(`http://localhost:8080/user`);
-    console.log(this.fetched)
+      const username = this.getCurrentUserName();
+      this.fetched = await this.$axios.$get(
+        `http://localhost:8080/user/${username}`,
+        {
+          password: this.password,
+          name: this.name,
+          gender: this.gender,
+          dob: this.dob,
+          email: this.email,
+          contact: this.contact
+        }  
+      );
+      console.log(this.fetched)
     },
+    methods: {
+      getCurrentUserName() {
+          if (process.browser) {
+            const token = localStorage.getItem("token")
+            if (token === null) {
+              return "Guest"
+            } else {
+              const decoded_token = jwt_decode(token)
+              console.log(decoded_token)
+              return decoded_token["user"]
+            }
+          }
+        }
+
+    }
+
    }
+
 </script>
 
 <style>
