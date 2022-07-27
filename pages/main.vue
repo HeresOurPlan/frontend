@@ -6,7 +6,7 @@
     padding-top: 1%; padding-left: 12%; ">
       <strong>
       <i>
-        Last Viewed Activities
+        Suggestions
       </i>
       </strong>
     </h1>
