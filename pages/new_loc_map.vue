@@ -40,7 +40,9 @@
 </template>
 <script>
 import Navbar from "@/components/Navbar.vue";
+
 export default {
+  
   props: {
      value: {
       type: Object,
@@ -54,6 +56,7 @@ export default {
       })
     }
   },
+  
   data() {
     return {
       loading:false,

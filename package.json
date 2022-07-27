@@ -18,6 +18,7 @@
     "core-js": "^3.19.3",
     "jwt-decode": "^3.1.2",
     "leaflet": "^1.8.0",
+    "leaflet-geosearch": "^3.6.1",
     "nuxt": "^2.15.8",
     "react-axios": "^2.0.6",
     "vue": "^2.6.14",
