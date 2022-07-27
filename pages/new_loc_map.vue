@@ -43,19 +43,19 @@ import Navbar from "@/components/Navbar.vue";
 
 export default {
   
-  props: {
-     value: {
-      type: Object,
-      required: true
-    },
-    defaultLocation: {
-      type: Object,
-      default: () => ({
-        lat: 8.9806,
-        lng: 38.7578
-      })
-    }
-  },
+  // props: {
+  //     value: {
+  //     type: Object,
+  //     required: true
+  //   },
+  //   defaultLocation: {
+  //     type: Object,
+  //     default: () => ({
+  //       lat: 8.9806,
+  //       lng: 38.7578
+  //     })
+  //   }
+  // },
   
   data() {
     return {

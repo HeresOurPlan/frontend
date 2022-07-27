@@ -29,8 +29,10 @@
     <br/><br/>
 
     <div class = "icons">
+        <a href ="/itinerary"><i class="fa-solid fa-list-check fa-3x" style="color:black;"></i></a>
+        <br/><br/>
         <a href ="/map"><i class="fa-solid fa-location-dot fa-3x" style="color:black;"></i></a>
-        <br/><br/><br/><br/><br/>
+        <br/><br/>
         <a href ="/new_loc_map"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
     <br/><br/><br/><br/><br/>

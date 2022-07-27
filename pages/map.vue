@@ -45,7 +45,7 @@
   <br/><br/><br/><br/>
 
     <div class = "icons">
-        <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
+        <a href ="/new_loc_map"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
 
   <br/><br/><br/><br/>    <br/>
@@ -79,7 +79,7 @@ export default {
     // override this.markers
     // v-for upstairs
     // getlatlong refer to this.markers
-    this.activities = await this.$axios.$get("http://localhost:8080/useractivities");
+    this.activities = await this.$axios.$get("http://localhost:8080/activities");
     console.log(this.activities)
     },
 

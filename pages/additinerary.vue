@@ -28,15 +28,6 @@
             </b-row>
             <b-row style="padding-bottom:10px">
                 <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
-                    Postal Code:
-                </b-col>
-                <b-col class="col-lg-4">
-                  <input v-model="postal" type="text" placeholder="Postal Code" style = "background-color: #F2E8CF; width: 75%;
-                  color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
-                </b-col> 
-            </b-row>
-            <b-row style="padding-bottom:10px">
-                <b-col class="col-lg-6" style="width: 75%; color: black; border: 5px solid #FCF6E7; border-radius: 10px; box-sizing: border-box;text-align:right;font-family:Georgia, 'Times New Roman', Times, serif;font-style:italic;font-weight:bold">
                     Opening Hours (e.g. 00:00:00):
                 </b-col>
                 <b-col class="col-lg-4">
@@ -155,7 +146,6 @@ export default Vue.extend({
       opening_hours: "",
       price_point: "",
       category: "",
-      postal:"",
       prior_booking:"",
       imgfiles: [],
     };
@@ -192,7 +182,6 @@ fetchOnServer: false,
         `http://localhost:8080/activity`,
         {
           activity_name: this.activityName,
-          postal: this.postal,
           closing_hours: this.closing_hours,
           address: this.address,
           locationCoord: this.locationCoord,

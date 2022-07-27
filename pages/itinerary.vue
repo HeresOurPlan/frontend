@@ -25,6 +25,7 @@
                     <b>Location:</b> {{activity.location}}, S({{activity.postal}})<br>
                     <b>Opening/Closing Hours:</b> {{activity.opening_hours}}-{{activity.closing_hours}}<br>
                 </div>
+                <br>
                 <div class="activityButton">
                     <b-button v-b-modal.modal-1>
                         Complete Activity
@@ -59,10 +60,10 @@
     <br/><br/><br/><br/>
 
     <div class = "icons">
-        <a href ="/additinerary"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
+        <a href ="/new_loc_map"><i class="fa-regular fa-square-plus fa-3x" style="color:black;"></i></a>
     </div>
 
-    <br/><br/><br/><br/>    <br/>
+    <br/><br/><br/><br/><br/>
     </div>
 
 
