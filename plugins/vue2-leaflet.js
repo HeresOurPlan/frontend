@@ -2,17 +2,17 @@ import Vue from 'vue';
 import { LMap, LTileLayer, LMarker, LTooltip } from 'vue2-leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Icon } from 'leaflet';
-// import L from 'leaflet';
-// import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
+import L from 'leaflet';
+import { GeoSearchControl, OpenStreetMapProvider } from 'leaflet-geosearch';
 
-// const provider = new OpenStreetMapProvider();
+const provider = new OpenStreetMapProvider();
 
-// const searchControl = new GeoSearchControl({
-//   provider: provider,
-// });
+const searchControl = new GeoSearchControl({
+  provider: provider,
+});
 
-// const map = new L.Map('map');
-// map.addControl(searchControl);
+const map = new L.Map('map');
+map.addControl(searchControl);
 
 delete Icon.Default.prototype._getIconUrl;
 Icon.Default.mergeOptions({
