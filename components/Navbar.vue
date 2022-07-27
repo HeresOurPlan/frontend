@@ -31,11 +31,9 @@
           <b-dropdown-item href="/login"><b>{{ logout() }}Log Out</b></b-dropdown-item>
         </b-nav-item-dropdown>
 
-          <b-nav-item-dropdown class="m-md-2" no-caret right text>
-            <b-dropdown-item href="/profileEdit">Edit Profile</b-dropdown-item>
-            <b-dropdown-item href="/login">{{ logout() }}Log Out</b-dropdown-item>
-          </b-nav-item-dropdown>
-        </b-nav-item>
+        <b-nav-item href="profilePage" class="profileCircle"/>
+      </b-navbar-nav>
+    </b-collapse>
   </b-navbar>
 </template>
 
