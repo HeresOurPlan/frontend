@@ -194,7 +194,7 @@ fetchOnServer: false,
         }
       );
       const new_useractivity = await this.$axios.$post(
-        `http://localhost:8080/useractivities`,
+        `http://localhost:8080/useractivities/`,
         {
           username: username,
           activity: new_activity.id,

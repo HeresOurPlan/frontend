@@ -93,7 +93,7 @@
             <br>
             <div class="buttonHolder">
                 <router-link to ="/profileEdit">
-                <input type='button' value = "Edit" style="color: black; font-weight: bold;" @click="submitForm">
+                <input type='button' value = "Edit" style="color: black; font-weight: bold;">
                 </router-link>
             </div>
         </b-container>
@@ -116,7 +116,7 @@ export default {
   fetchOnServer: false,
 
     async fetch() {
-    this.fetched = await this.$axios.$get("http://localhost:8080/user");
+    this.fetched = await this.$axios.$get(`http://localhost:8080/user`);
     console.log(this.fetched)
     },
    }
