@@ -42,7 +42,7 @@
                     Password:
                 </b-col>
                 <b-col class="col-lg-4">
-                  <input v-model="password" type="text" placeholder="Password" style = "background-color: #F2E8CF; width: 75%;
+                  <input v-model="password" type="password" placeholder="Password" style = "background-color: #F2E8CF; width: 75%;
                   color: black; border: 5px solid #F2E8CF; border-radius: 10px; box-sizing: border-box;">
                 </b-col> 
             </b-row>
