@@ -26,13 +26,13 @@
           <b-dropdown-item href="/itinerary">Itinerary</b-dropdown-item>
           <b-dropdown-item href="/additinerary">Add Activity</b-dropdown-item>
           <b-dropdown-item href="/map">Map</b-dropdown-item>
-          <b-dropdown-item href="/logout"><b>Log Out?</b></b-dropdown-item>
+          <b-dropdown-item href="/login"><b>{{ logout() }}Log Out</b></b-dropdown-item>
         </b-nav-item-dropdown>
 
         <b-nav-item href="#" class = "profileCircle">
           <b-nav-item-dropdown class="m-md-2" no-caret right text>
             <b-dropdown-item href="/profileEdit">Edit Profile</b-dropdown-item>
-            <b-dropdown-item href="/logout">Log Out</b-dropdown-item>
+            <b-dropdown-item href="/login">{{ logout() }}Log Out</b-dropdown-item>
           </b-nav-item-dropdown>
         </b-nav-item>
 
@@ -58,6 +58,11 @@ export default {
             console.log(decoded_token)
             return decoded_token["user"]
           }
+        }
+      },
+      logout() {
+        if (process.browser) {
+          return localStorage.clear()
         }
       },
 
